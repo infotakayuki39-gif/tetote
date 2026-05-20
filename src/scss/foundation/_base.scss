@@ -1,0 +1,18 @@
+@use 'variable' as v;
+
+body {
+  font-family: v.$font-main;
+  color: v.$color-black;
+  background-color: v.$color-white;
+  line-height: 1.7;
+}
+
+.l-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 40px;
+
+  @media screen and (max-width: v.$bp-sp) {
+    padding: 0 16px;
+  }
+}

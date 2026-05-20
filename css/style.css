@@ -1,10 +1,17 @@
-/* tetote CSS */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 14 | @use 'object/component/title';
+ *    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   src/scss/style.scss 14:1  root stylesheet */
 
-h1 {
-    color: #333;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 14 \2502  @use 'object/component/title';\a    \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   src/scss/style.scss 14:1  root stylesheet";
 }
