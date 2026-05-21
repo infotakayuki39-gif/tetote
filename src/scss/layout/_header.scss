@@ -1,0 +1,286 @@
+@use '../foundation/variable' as v;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 118px;
+  z-index: 100;
+
+  // FV上に重なるので背景は透明スタート
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+
+  // スクロール後に背景を付ける（JSで .is-scrolled を付与）
+  &.is-scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 40px;
+    gap: 32px;
+  }
+
+  &__logo {
+    width: 250px;
+    flex-shrink: 0;
+
+    @media screen and (max-width: v.$bp-sp) {
+      width: 154px;
+      height: 38px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // PCナビは非表示（ハンバーガーメニューのみ）
+  &__nav {
+    display: none;
+  }
+
+  // CTAボタングループ
+  &__cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+
+    @media screen and (max-width: v.$bp-sp) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    // 募集要項ボタン（黒）
+    &--black {
+      background-color: v.$color-black;
+      color: v.$color-white;
+    }
+
+    // ENTRYボタン（ゴールド）
+    &--gold {
+      background-color: v.$color-gold;
+      color: v.$color-white;
+    }
+  }
+
+  // ハンバーガーボタン
+  &__hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: v.$color-white;
+
+    @media screen and (max-width: v.$bp-sp) {
+      margin-left: auto;
+    }
+  }
+
+  &__hamburger-line {
+    display: block;
+    width: 28px;
+    height: 1px;
+    background-color: v.$color-white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &__hamburger-text {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: v.$color-white;
+  }
+
+  // ハンバーガー　is-active時
+  &__hamburger.is-active {
+    .l-header__hamburger-line:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .l-header__hamburger-line:nth-child(2) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+}
+
+.l-hamburger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: v.$color-beige;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+  
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    &__inner {
+      display: flex;
+      height: 100%;
+      min-height: 100vh;
+  
+      @media screen and (max-width: v.$bp-sp) {
+        flex-direction: column;
+      }
+    }
+  
+    // 左エリア（PC用ロゴ）
+    &__logo-area {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid v.$color-gold-light;
+      padding: 120px 40px 60px;
+  
+      @media screen and (max-width: v.$bp-sp) {
+        display: none;
+      }
+    }
+  
+    &__logo {
+      width: 200px;
+  
+      img {
+        width: 100%;
+      }
+    }
+  
+    // 右エリア（ナビ）
+    &__nav {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 80px 60px;
+  
+      @media screen and (max-width: v.$bp-sp) {
+        width: 100%;
+        padding: 100px 24px 60px;
+      }
+    }
+  
+    // ナビリスト：PC2列・SP1列
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-bottom: 40px;
+  
+      @media screen and (max-width: v.$bp-sp) {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    &__item {
+      border-bottom: 1px solid v.$color-gold-light;
+  
+      // PC：奇数列の右にborderなし処理は不要（2列グリッドなので自然に分かれる）
+    }
+  
+    &__link {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 20px 0;
+      transition: opacity 0.3s ease;
+  
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  
+    &__link-en {
+      font-family: v.$font-en;
+      font-size: 24px;
+      font-weight: 700;
+      color: v.$color-black;
+      letter-spacing: 0.02em;
+  
+      @media screen and (max-width: v.$bp-sp) {
+        font-size: 20px;
+      }
+    }
+  
+    &__link-ja {
+      font-size: 12px;
+      color: v.$color-black;
+      letter-spacing: 0.05em;
+    }
+  
+    // CTAボタン
+    &__cta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+  
+      @media screen and (max-width: v.$bp-sp) {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      transition: opacity 0.3s ease;
+  
+      &:hover {
+        opacity: 0.8;
+      }
+  
+      &--black {
+        background-color: v.$color-black;
+        color: v.$color-white;
+      }
+  
+      &--gold {
+        background-color: v.$color-gold;
+        color: v.$color-white;
+      }
+    }
+  }
+  
+  body.is-drawerActive {
+    overflow: hidden;
+  }
+  
+  // body scroll lock
+  body.is-drawerActive {
+    overflow: hidden;
+  }

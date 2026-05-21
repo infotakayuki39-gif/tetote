@@ -5,10 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tetote</title>
     <link rel="stylesheet" href="/src/scss/style.scss">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>tetote</h1>
+    <header class="l-header">
+        <div class="l-header__inner">
+
+          <!-- ロゴ -->
+          <a href="/" class="l-header__logo">
+            <img src="/images/logo-white.svg" alt="TETOTE.co.ltd RECRUITING">
+          </a>
+
+          <!-- CTAボタン -->
+          <div class="l-header__cta">
+            <a href="/entry.html#requirements" class="l-header__btn l-header__btn--black">募集要項</a>
+            <a href="/entry.html" class="l-header__btn l-header__btn--gold">ENTRY</a>
+          </div>
+
+          <!-- ハンバーガー -->
+          <button
+            class="l-header__hamburger"
+            id="js-hamburger"
+            aria-expanded="false"
+            aria-controls="js-global-menu"
+            aria-label="メニューを開く"
+            type="button"
+          >
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-text">MENU</span>
+          </button>
+
+        </div>
+      </header>
+
+      <!-- ドロワーメニュー -->
+      <div class="l-hamburger-menu" id="js-global-menu" aria-hidden="true">
+        <div class="l-hamburger-menu__inner">
+
+          <!-- 左：ロゴエリア（PC用） -->
+          <div class="l-hamburger-menu__logo-area">
+            <a href="/" class="l-hamburger-menu__logo">
+              <img src="/images/logo-dark.svg" alt="TETOTE.co.ltd RECRUITING">
+            </a>
+          </div>
+
+          <!-- 右：ナビエリア -->
+          <nav class="l-hamburger-menu__nav">
+            <ul class="l-hamburger-menu__list">
+              <li class="l-hamburger-menu__item">
+                <a href="/about.html" class="l-hamburger-menu__link">
+                  <span class="l-hamburger-menu__link-en">ABOUT US</span>
+                  <span class="l-hamburger-menu__link-ja">TETOTEについて</span>
+                </a>
+              </li>
+              <li class="l-hamburger-menu__item">
+                <a href="/staff.html" class="l-hamburger-menu__link">
+                  <span class="l-hamburger-menu__link-en">STAFF</span>
+                  <span class="l-hamburger-menu__link-ja">社員について</span>
+                </a>
+              </li>
+              <li class="l-hamburger-menu__item">
+                <a href="/blog.html" class="l-hamburger-menu__link">
+                  <span class="l-hamburger-menu__link-en">BLOG</span>
+                  <span class="l-hamburger-menu__link-ja">採用ブログ</span>
+                </a>
+              </li>
+              <li class="l-hamburger-menu__item">
+                <a href="/benefits.html" class="l-hamburger-menu__link">
+                  <span class="l-hamburger-menu__link-en">BENEFITS</span>
+                  <span class="l-hamburger-menu__link-ja">福利厚生について</span>
+                </a>
+              </li>
+              <li class="l-hamburger-menu__item">
+                <a href="/career.html" class="l-hamburger-menu__link">
+                  <span class="l-hamburger-menu__link-en">CAREER</span>
+                  <span class="l-hamburger-menu__link-ja">研修制度とキャリアパス</span>
+                </a>
+              </li>
+              <li class="l-hamburger-menu__item">
+                <a href="/faq.html" class="l-hamburger-menu__link">
+                  <span class="l-hamburger-menu__link-en">FAQ</span>
+                  <span class="l-hamburger-menu__link-ja">よくある質問</span>
+                </a>
+              </li>
+            </ul>
+
+            <!-- ボタン -->
+            <div class="l-hamburger-menu__cta">
+              <a href="/entry.html#requirements" class="l-hamburger-menu__btn l-hamburger-menu__btn--black">募集要項</a>
+              <a href="/entry.html" class="l-hamburger-menu__btn l-hamburger-menu__btn--gold">ENTRY</a>
+            </div>
+          </nav>
+
+        </div>
+      </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
