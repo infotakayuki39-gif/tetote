@@ -17,6 +17,11 @@
     background-color: rgba(0, 0, 0, 0.6);
   }
 
+  @media screen and (max-width: v.$bp-sp) {
+    height: 45px;
+    padding-top: 8px;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -38,6 +43,15 @@
       width: 100%;
       height: auto;
     }
+  }
+
+  &__logo-black {
+    display: none;
+  }
+
+  body.is-drawerActive & {
+    .l-header__logo-white { display: none; }
+    .l-header__logo-black { display: block; }
   }
 
   // PCナビは非表示（ハンバーガーメニューのみ）
@@ -118,10 +132,19 @@
 
   // ハンバーガー　is-active時
   &__hamburger.is-active {
+    .l-header__hamburger-line {
+      background-color: v.$color-black;
+    }
+    .l-header__hamburger-text {
+      opacity: 0;
+    }
     .l-header__hamburger-line:nth-child(1) {
       transform: translateY(6px) rotate(45deg);
     }
     .l-header__hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    .l-header__hamburger-line:nth-child(3) {
       transform: translateY(-6px) rotate(-45deg);
     }
   }
@@ -161,8 +184,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-right: 1px solid v.$color-gold-light;
       padding: 120px 40px 60px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 407px;
+        background-color: v.$color-gold-light;
+      }
   
       @media screen and (max-width: v.$bp-sp) {
         display: none;
@@ -184,29 +218,39 @@
       flex-direction: column;
       justify-content: center;
       padding: 120px 80px 60px;
-  
+
       @media screen and (max-width: v.$bp-sp) {
         width: 100%;
-        padding: 100px 24px 60px;
+        height: 100vh;
+        padding: 80px 24px 32px;
+        justify-content: center;
+        overflow: hidden;
       }
     }
   
-    // ナビリスト：PC2列・SP1列
+    // ナビリスト：縦3行×2列
     &__list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
+      grid-template-rows: repeat(3, auto);
+      grid-auto-flow: column;
+      gap: 30px;
       margin-bottom: 40px;
-  
+
       @media screen and (max-width: v.$bp-sp) {
-        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-flow: row;
+        gap: 0;
+        margin-bottom: 24px;
       }
     }
   
     &__item {
       border-bottom: 1px solid v.$color-gold-light;
-  
-      // PC：奇数列の右にborderなし処理は不要（2列グリッドなので自然に分かれる）
+
+      &:first-child,
+      &:nth-child(4) {
+        border-top: 1px solid v.$color-gold-light;
+      }
     }
   
     &__link {
@@ -219,47 +263,52 @@
       &:hover {
         opacity: 0.6;
       }
+
+      @media screen and (max-width: v.$bp-sp) {
+        padding: 12px 0;
+      }
     }
-  
+
     &__link-en {
       font-family: v.$font-en;
       font-size: 24px;
       font-weight: 700;
       color: v.$color-black;
       letter-spacing: 0.02em;
-  
+
       @media screen and (max-width: v.$bp-sp) {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
-  
+
     &__link-ja {
       font-size: 12px;
       color: v.$color-black;
       letter-spacing: 0.05em;
+
+      @media screen and (max-width: v.$bp-sp) {
+        font-size: 10px;
+      }
     }
   
     // CTAボタン
     &__cta {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 16px;
-  
-      @media screen and (max-width: v.$bp-sp) {
-        grid-template-columns: 1fr;
-      }
     }
   
     &__btn {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 248px;
       height: 52px;
       font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.08em;
       transition: opacity 0.3s ease;
-  
+
       &:hover {
         opacity: 0.8;
       }
