@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tetote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;700&family=Viga&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/scss/style.scss">
 </head>
 <body>
@@ -101,6 +104,37 @@
 
     </div>
     </div>
+
+    <main>
+        <section class="p-hero">
+
+            <!-- スライダー（2枚に変更） -->
+            <div class="p-hero__slider">
+              <div class="p-hero__slide p-hero__slide--1 is-active"></div>
+              <div class="p-hero__slide p-hero__slide--2"></div>
+            </div>
+          
+            <!-- テキスト -->
+            <div class="p-hero__content">
+              <h1 class="p-hero__title">
+                BECOME A<br>CHALLENGER.
+              </h1>
+              <p class="p-hero__subtitle">君の挑戦が、意思が、未来を変える</p>
+            </div>
+          
+            <!-- NEWS -->
+            <div class="p-hero__news">
+              <div class="p-hero__news-inner">
+                <span class="p-hero__news-label">NEWS</span>
+                <a href="#" class="p-hero__news-link" id="js-hero-news">
+                  <span class="p-hero__news-text">新入社員向けに、入社前研修を行いました。</span>
+                  <span class="p-hero__news-more">VIEW MORE ›</span>
+                </a>
+              </div>
+            </div>
+          
+          </section>
+    </main>
 
     <footer class="l-footer">
 
@@ -211,7 +245,7 @@
           </div>
         </div>
       
-      </footer>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>

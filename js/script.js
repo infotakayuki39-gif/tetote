@@ -43,5 +43,37 @@ function initHamburgerMenu() {
   }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroSlider();
+  initHeroNews();
   initHamburgerMenu();
 });
+
+// Hero スライダー
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.p-hero__slide');
+  if (slides.length < 2) return; // 2枚未満なら何もしない
+
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('is-active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('is-active');
+  }, 4000);
+}
+
+// Hero NEWS（最新ブログ記事を1件取得）
+function initHeroNews() {
+  const newsLink = document.getElementById('js-hero-news');
+  if (!newsLink) return;
+
+  // WordPress化後はREST APIに差し替える
+  // 現在はダミーデータで表示
+  const dummyNews = {
+    title: '新入社員向けに、入社前研修を行いました。',
+    url: '/blog/sample.html'
+  };
+
+  newsLink.href = dummyNews.url;
+  newsLink.querySelector('.p-hero__news-text').textContent = dummyNews.title;
+}
