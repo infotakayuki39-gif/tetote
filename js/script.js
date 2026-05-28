@@ -1,5 +1,6 @@
-// tetote JavaScript
-console.log('tetote site loaded');
+import Swiper from 'swiper';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
 function initHamburgerMenu() {
     const hamburger = document.getElementById('js-hamburger');
     const menu = document.getElementById('js-global-menu');
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initHeroNews();
   initHamburgerMenu();
+  initSwiper();
 });
 
 // Hero スライダー
@@ -76,4 +78,54 @@ function initHeroNews() {
 
   newsLink.href = dummyNews.url;
   newsLink.querySelector('.p-hero__news-text').textContent = dummyNews.title;
+}
+
+function initSwiper() {
+  // aboutスライダー（止まらずに流れ続ける）
+  const aboutSlider = document.querySelector('.p-about__slider');
+  if (aboutSlider) {
+    new Swiper('.p-about__slider', {
+      modules: [Autoplay],
+      slidesPerView: 3,
+      spaceBetween: 34,
+      loop: true,
+      speed: 4000,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+    });
+  }
+
+  // memberスライダー
+  const memberSlider = document.querySelector('.p-member__slider');
+  if (memberSlider) {
+    new Swiper('.p-member__slider', {
+      modules: [Navigation],
+      slidesPerView: 4,
+      spaceBetween: 40,
+      loop: true,
+      autoplay: false,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: '.p-member__nav-btn--next',
+        prevEl: '.p-member__nav-btn--prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.5,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2.5,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      },
+    });
+  }
 }
