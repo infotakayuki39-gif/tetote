@@ -14,7 +14,17 @@
 
   // スクロール後に背景を付ける（JSで .is-scrolled を付与）
   &.is-scrolled {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: v.$color-white;
+
+    .l-header__logo-white { display: none; }
+    .l-header__logo-black { display: block; }
+
+    .l-header__hamburger-line {
+      background-color: v.$color-black;
+    }
+    .l-header__hamburger-text {
+      color: v.$color-black;
+    }
   }
 
   @media screen and (max-width: v.$bp-sp) {

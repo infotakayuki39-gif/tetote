@@ -1,9 +1,10 @@
-/* Error: Can't find stylesheet to import.
+/* Error: Undefined variable.
  *    ,
- * 14 | @use 'object/component/title';
- *    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * 27 |   transition: opacity $transition;
+ *    |                       ^^^^^^^^^^^
  *    '
- *   src/scss/style.scss 14:1  root stylesheet */
+ *   src/scss/foundation/_reset.scss 27:23  @use
+ *   src/scss/style.scss 2:1                root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 14 \2502  @use 'object/component/title';\a    \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   src/scss/style.scss 14:1  root stylesheet";
+  content: "Error: Undefined variable.\a    \2577 \a 27 \2502    transition: opacity $transition;\a    \2502                        ^^^^^^^^^^^\a    \2575 \a   src/scss/foundation/_reset.scss 27:23  @use\a   src/scss/style.scss 2:1                root stylesheet";
 }

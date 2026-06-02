@@ -48,7 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroNews();
   initHamburgerMenu();
   initSwiper();
+  initHeaderScroll();
 });
+
+function initHeaderScroll() {
+  const header = document.querySelector('.l-header');
+  const hero = document.querySelector('.p-hero');
+  if (!header || !hero) return;
+
+  const update = () => {
+    const scrolled = window.scrollY >= hero.offsetHeight;
+    header.classList.toggle('is-scrolled', scrolled);
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
 
 // Hero スライダー
 function initHeroSlider() {
@@ -86,14 +101,25 @@ function initSwiper() {
   if (aboutSlider) {
     new Swiper('.p-about__slider', {
       modules: [Autoplay],
-      slidesPerView: 3,
-      spaceBetween: 34,
+      slidesPerView: 2.5,
+      spaceBetween: 20,
       loop: true,
       speed: 4000,
       allowTouchMove: false,
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
+      },
+      breakpoints: {
+          375: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+          },
+          
+          1024: {
+            slidesPerView: 2.5,
+            spaceBetween: 32,
+          },
       },
     });
   }
