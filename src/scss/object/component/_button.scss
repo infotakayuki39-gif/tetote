@@ -1,34 +1,43 @@
 @use '../../foundation/variable' as v;
 
 .c-btn {
-  display: inline-flex;
+  position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  min-width: 200px;
-  height: 52px;
-  padding: 0 32px;
+  width: fit-content;
+  margin-inline: auto;
+  min-width: 277px;
+  min-height: 62px;
+  padding: 22px 123px;
   border: 1px solid v.$color-black;
   background-color: transparent;
   color: v.$color-black;
-  font-family: v.$font-en;
-  font-size: 13px;
+  font-family: v.$font-vigo;
+  font-size: 20px;
   font-weight: 500;
-  letter-spacing: 0.1em;
   transition: background-color 0.3s ease, color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('/images/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
   &:hover {
     background-color: v.$color-black;
     color: v.$color-white;
     opacity: 1;
-  }
 
-  &__arrow {
-    font-size: 16px;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover &__arrow {
-    transform: translateX(4px);
+    &::after {
+      background-image: url('/images/arrow-white.svg');
+    }
   }
 }

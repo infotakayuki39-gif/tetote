@@ -36,8 +36,12 @@
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 40px;
-    gap: 32px;
+    padding: 0 30px;
+    gap: 40px;
+
+    @media screen and (max-width: v.$bp-sp) {
+      padding: 0 12px;
+    }
   }
 
   &__logo {
@@ -73,7 +77,7 @@
   &__cta {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 22px;
     margin-left: auto;
 
     @media screen and (max-width: v.$bp-sp) {
@@ -85,11 +89,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 44px;
-    padding: 0 24px;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.05em;
+    line-height: 1;
     transition: opacity 0.3s ease;
 
     &:hover {
@@ -100,12 +102,14 @@
     &--black {
       background-color: v.$color-black;
       color: v.$color-white;
+      padding: 14px 35px;
     }
 
     // ENTRYボタン（ゴールド）
     &--gold {
       background-color: v.$color-gold;
       color: v.$color-white;
+      padding: 14px 41px;
     }
   }
 
@@ -114,11 +118,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 0;
     color: v.$color-white;
 
     @media screen and (max-width: v.$bp-sp) {
@@ -128,16 +131,38 @@
 
   &__hamburger-line {
     display: block;
-    width: 28px;
-    height: 1px;
+    width: 52px;
+    height: 2px;
     background-color: v.$color-white;
     transition: transform 0.3s ease, opacity 0.3s ease;
+
+
+    @media screen and (max-width: v.$bp-sp) {
+      width: 32px;
+      height: 2px;
+    }
+
+    & + & {
+      margin-top: 14px;
+    }
+
+    @media screen and (max-width: v.$bp-sp) {
+      & + & {
+        margin-top: 7px;
+      }
+    }
   }
 
   &__hamburger-text {
-    font-size: 10px;
+    margin-top: 6px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     color: v.$color-white;
+    @media screen and (max-width: v.$bp-sp) {
+      font-size: 10px;
+      letter-spacing: normal;
+      margin-top: 1px;
+    }
   }
 
   // ハンバーガー　is-active時
@@ -214,8 +239,9 @@
     }
   
     &__logo {
-      width: 200px;
-  
+      width: 100%;
+      max-width: 200px;
+
       img {
         width: 100%;
       }
@@ -312,8 +338,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 248px;
-      height: 52px;
+      width: 100%;
+      max-width: 248px;
+      min-height: 52px;
       font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.08em;
@@ -335,11 +362,6 @@
     }
   }
   
-  body.is-drawerActive {
-    overflow: hidden;
-  }
-  
-  // body scroll lock
   body.is-drawerActive {
     overflow: hidden;
   }

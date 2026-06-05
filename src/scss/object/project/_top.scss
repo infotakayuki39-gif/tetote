@@ -50,15 +50,16 @@
   // テキストコンテンツ
   &__content {
     position: absolute;
-    bottom: 10px;
+    bottom: 161px;
     left: 0;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 86px;
 
     @media screen and (max-width: v.$bp-sp) {
-      bottom: 80px;
+      bottom: 81px;
+      gap: 18px;
     }
   }
 
@@ -71,11 +72,12 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    padding: 0px 40px;
+    padding: 0px 63px;
 
     @media screen and (max-width: v.$bp-sp) {
-      font-size: clamp(36px, 10vw, 56px);
-      padding: 0px 20px;
+      font-size: 48px;
+      padding: 0px 14px;
+      letter-spacing: normal;
     }
   }
 
@@ -85,10 +87,9 @@
     background-color: transparent;
     color: v.$color-white;
     font-family: "Noto Sans JP", sans-serif;
-    font-size: 14px;
+    font-size: 24px;
     font-weight: 500;
-    letter-spacing: 0.05em;
-    padding: 10px 60px 10px 40px;
+    padding: 10px 66px;
     margin-left: 0;
     max-width: 515px;
 
@@ -100,38 +101,55 @@
       clip-path: polygon(
         0% 0%,
         100% 0%,
-        92% 100%,
+        94% 100%,
         0% 100%
       );
       z-index: -1;
+
+      @media screen and (max-width: v.$bp-sp) {
+        clip-path: polygon(
+          0% 0%,
+          73% 0%,
+          69% 100%,
+          0% 100%
+        );
+      }
     }
 
     @media screen and (max-width: v.$bp-sp) {
-      font-size: 13px;
-      padding: 8px 48px 8px 20px;
+      font-size: 12px;
+      padding: 8px 24px 8px 12px;
     }
   }
 
   &__news {
     position: absolute;
-    bottom: 20px;
+    bottom: 37px;
     left: 0;
     right: 0;
     z-index: 2;
     padding: 0; // paddingを削除して全幅に
+
+    @media screen and (max-width: v.$bp-sp) {
+      bottom: 10px;
+    }
   }
   
   &__news-inner {
     display: flex;
     align-items: stretch;
-    height: 56px;
+    min-height: 62px;
     width: 100%;
-    max-width: 1163px;
-    margin-inline: auto;
+    max-width: 1263px;
+    margin: 0 105px 0 72px;
+    border: 1px solid v.$color-black;
+    border-radius: 999px;
 
     @media screen and (max-width: v.$bp-sp) {
-      max-width: 100%;
-      height: 52px;
+      width: auto;
+      max-width: none;
+      min-height: 48px;
+      margin: 0 12px;
     }
   }
 
@@ -142,16 +160,15 @@
     background-color: v.$color-black;
     color: v.$color-white;
     font-family: v.$font-en;
-    font-size: 13px;
+    font-size: 24px;
     font-weight: 700;
-    letter-spacing: 0.1em;
-    padding: 0 32px;
+    padding: 0 57px;
     flex-shrink: 0;
     border-radius: 999px 0 0 999px;
 
     @media screen and (max-width: v.$bp-sp) {
-      padding: 0 20px;
-      font-size: 12px;
+      padding: 0 11px;
+      font-size: 10px;
     }
   }
 
@@ -161,8 +178,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: v.$color-white;
-    padding: 0 24px;
-    gap: 16px;
+    padding: 0 46px 0 90px;
     border-radius: 0 999px 999px 0; // 右端だけ丸く
     transition: opacity 0.3s ease;
     min-width: 0;
@@ -172,13 +188,13 @@
     }
   
     @media screen and (max-width: v.$bp-sp) {
-      padding: 0 16px;
-      border-radius: 0; // SPは角丸なし
+      padding: 0 10px;
+      border-radius: 0 999px 999px 0;
     }
   }
 
   &__news-text {
-    font-size: 14px;
+    font-size: 16px;
     color: v.$color-black;
     white-space: nowrap;
     overflow: hidden;
@@ -186,16 +202,43 @@
 
     @media screen and (max-width: v.$bp-sp) {
       font-size: 12px;
+      text-overflow: clip;
+    }
+
+    &--sp {
+      display: none;
+
+      @media screen and (max-width: v.$bp-sp) {
+        display: block;
+        white-space: normal;
+        line-height: 1.2;
+      }
+    }
+
+    &--pc {
+      @media screen and (max-width: v.$bp-sp) {
+        display: none;
+      }
     }
   }
 
   &__news-more {
+    display: inline-flex;
+    align-items: center;
     font-family: v.$font-vigo;
-    font-size: 12px;
+    font-size: 14px;
     color: v.$color-black;
     white-space: nowrap;
     flex-shrink: 0;
-    letter-spacing: 0.05em;
+    gap: 6px;
+
+    @media screen and (max-width: v.$bp-sp) {
+      display: none;
+    }
+
+    img {
+      display: block;
+    }
   }
 }
 
@@ -220,19 +263,18 @@
       }
 
       &--even {
-        padding-top: 40px;
+        padding-top: 36px;
       }
     }
 
     &__slide-img {
       width: 506px;
-      height: 393px;
+      aspect-ratio: 506 / 393;
       overflow: hidden;
       border-radius: 60px;
 
       @media screen and (max-width: v.$bp-sp) {
         width: 260px;
-        height: auto;
         aspect-ratio: 506 / 393;
         border-radius: 30px;
       }
@@ -248,12 +290,11 @@
     // テキストオーバーレイ（スライダー上に重なる）
     &__catch {
       position: absolute;
-      bottom: 80px;
+      bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
       
-      padding: 16px 24px;
       width: fit-content;
       text-align: center;
       display: flex;          
@@ -261,7 +302,6 @@
       gap: 7px;   
 
       @media screen and (max-width: v.$bp-sp) {
-        padding: 12px 16px;
         width: 100%;
       }
     }
@@ -269,18 +309,15 @@
     &__catch-text {
       font-size: 40px;
       font-weight: 700;
-      line-height: 1.6;
       color: v.$color-black;
       background-color: v.$color-white;
       display: block;
+      padding: 2px 11px;
 
-
-      @media screen and (max-width: 1024px) {
-        font-size: 32px;
-      }
 
       @media screen and (max-width: v.$bp-sp) {
         font-size: 24px;
+        padding: 2px 8px;
       }
     }
 
@@ -288,7 +325,7 @@
     // テキストエリア
     &__content {
       // position: relative;
-      padding: 80px 40px;
+      padding: 102px 40px;
       text-align: center;
       // background-image: url('/images/map01.jpg');
       // background-size: 1024px;
@@ -306,7 +343,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
+      gap: 52px;
       background-image: url('/images/map01.jpg');
       background-size: 1024px;
       background-repeat: no-repeat;
@@ -386,20 +423,7 @@
     color: v.$color-black;
     display: inline-block;
     border-bottom: none;
-    padding-top: 23
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    px;
+    padding-top: 23px;
     padding-bottom: 10px;
 
     &::after {
@@ -459,7 +483,7 @@
   &__card-img {
     position: relative;
     width: 300px;
-    height: 379px;
+    aspect-ratio: 300 / 379;
     border-radius: 30px;
     overflow: hidden;
     background-color: #e8e8e8;
@@ -473,7 +497,6 @@
 
     @media screen and (max-width: v.$bp-sp) {
       width: 220px;
-      height: 278px;
       border-radius: 20px;
     }
   }
@@ -613,18 +636,7 @@
       left: 0;
       transform: translate(0, -50%);
     }
-  }&__list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  max-width: 1000px;
-  margin-inline: auto;
-
-  @media screen and (max-width: v.$bp-sp) {
-    grid-template-columns: 1fr;
-    gap: 48px;
   }
-}
 
   &__title-wrap {
     position: relative;
@@ -980,7 +992,7 @@
 
   &__img {
     width: 156px;
-    height: 180px;
+    aspect-ratio: 156 / 180;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 0;
@@ -994,7 +1006,7 @@
 
     @media screen and (max-width: v.$bp-sp) {
       width: 120px;
-      height: 120px;
+      aspect-ratio: 1 / 1;
     }
   }
 
@@ -1005,8 +1017,6 @@
     flex-direction: column;
     gap: 8px;
     padding: 20px 23px;
-    position: relative;
-    padding-bottom: 40px;
 
     @media screen and (max-width: v.$bp-sp) {
       padding: 8px 18px;
@@ -1048,14 +1058,11 @@
   &__date {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 150px;
-    left: 16px;
+    margin-top: auto;
+    padding-top: 8px;
 
     @media screen and (max-width: v.$bp-sp) {
       font-size: 11px;
-      top: 100px;
-      left: 12px;
     }
   }
 }
