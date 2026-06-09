@@ -129,8 +129,8 @@ function initSwiper() {
   if (memberSlider) {
     new Swiper('.p-member__slider', {
       modules: [Navigation],
-      slidesPerView: 4,
-      spaceBetween: 40,
+      slidesPerView: 3,
+      spaceBetween: 44,
       loop: true,
       autoplay: false,
       allowTouchMove: true,
@@ -148,8 +148,8 @@ function initSwiper() {
           spaceBetween: 24,
         },
         1024: {
-          slidesPerView: 4,
-          spaceBetween: 40,
+          slidesPerView: 3,
+          spaceBetween: 44,
         },
       },
     });
