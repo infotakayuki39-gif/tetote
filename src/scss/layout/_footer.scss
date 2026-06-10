@@ -6,7 +6,7 @@
   // CTAエリア
   &__cta {
     position: relative;
-    min-height: 500px;
+    min-height: 489px;
 
     &::before {
       content: '';
@@ -30,15 +30,15 @@
 
   &__cta-inner {
     position: absolute;
-    bottom: -80px;
+    bottom: -138px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
     width: calc(100% - 80px);
     max-width: 956px;
     background-color: v.$color-white;
-    border-radius: 8px;
-    padding: 60px 40px 40px;
+    border-radius: 20px;
+    padding: 50px 40px 51px 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@
   &__cta-text {
     font-size: 16px;
     font-weight: 700;
-    line-height: 2;
+    line-height: 1.5;
     color: v.$color-black;
 
     @media screen and (max-width: v.$bp-sp) {
@@ -71,18 +71,29 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    position: relative;
     width: 100%;
-    max-width: 480px;
-    min-height: 64px;
-    padding-block: 20px;
+    max-width: 556px;
     background-color: v.$color-gold;
     color: v.$color-black;
-    font-family: v.$font-en;
-    font-size: 14px;
+    font-family: v.$font-vigo;
+    font-size: 16px;
     font-weight: 700;
-    letter-spacing: 0.1em;
     transition: opacity 0.3s ease;
+    padding: 21px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-image: url('/images/arrow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
 
     &:hover {
       opacity: 0.8;
@@ -90,14 +101,12 @@
   }
 
   &__cta-btn-arrow {
-    color: v.$color-black;
-    font-size: 18px;
+    display: none;
   }
 
   // フッターカード
   &__card {
     padding: 0px 40px 40px;
-    background-color: v.$color-beige;
     @media screen and (max-width: v.$bp-sp) {
       padding: 0px 16px 24px;
     }
@@ -106,8 +115,9 @@
   &__card-inner {
     max-width: 1312px;
     margin-inline: auto;
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 20px 20px;
     overflow: hidden;
+    background-color: v.$color-beige;
 
     @media screen and (max-width: v.$bp-sp) {
       padding-top: 60px;
@@ -127,10 +137,10 @@
     max-width: 956px;
     width: 100%;
     margin-inline: auto;
-    margin-bottom: 60px;
+    margin-bottom: 56px;
     display: flex;
     align-items: flex-start;
-    gap: 80px;
+    gap: 109px;
 
     @media screen and (max-width: v.$bp-sp) {
       flex-direction: column;
@@ -166,7 +176,7 @@
   &__logo {
     display: block;
     width: 100%;
-    max-width: 180px;
+    max-width: 250px;
 
     img {
       width: 100%;
@@ -176,6 +186,7 @@
   // ナビ
   &__nav {
     flex: 1;
+    padding-top: 21px;
 
     @media screen and (max-width: v.$bp-sp) {
       width: 100%;
@@ -185,7 +196,7 @@
   &__nav-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px 40px;
+    gap: 30px 22px;
 
     @media screen and (max-width: v.$bp-sp) {
       flex-direction: column;
@@ -216,7 +227,7 @@
 
   // ボトムバー
   &__bottom {
-    padding: 32px 40px 40px;
+    padding-bottom: 56px;
     display: flex;
     justify-content: center;
 
@@ -256,7 +267,7 @@
   &__sns {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     order: 2;
 
     @media screen and (max-width: v.$bp-sp) {
@@ -271,8 +282,8 @@
     transition: opacity 0.3s ease;
 
     img {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       object-fit: contain;
     }
 
