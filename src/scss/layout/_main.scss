@@ -1,0 +1,10 @@
+@use '../foundation/variable' as v;
+
+// 内ページ共通 — 固定ヘッダー分の押し下げ
+.l-page-main {
+  padding-top: 118px;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    padding-top: 45px;
+  }
+}

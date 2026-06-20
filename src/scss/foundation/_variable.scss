@@ -4,6 +4,7 @@ $color-beige: #FAF7F1;
 $color-gold: #988C2C;
 $color-gold-light: #AFA86F;
 $color-white: #ffffff;
+$color-gray: #e8e8e8;
 
 // Font
 $font-main: 'Noto Sans JP', sans-serif;
@@ -11,7 +12,12 @@ $font-en: 'Poppins', sans-serif;
 $font-vigo: 'Viga', sans-serif;
 
 // Breakpoint
-$bp-sp: 768px;
+$bp-sp:     375px;  // ~375px: SPカンプ基準
+$bp-sp-max: 767px;  // 376~767px: SP拡張
+$bp-tb:     768px;  // 768~1023px: タブレット（カンプなし）
+$bp-pc:     1024px;  // 1024px~: PCレイアウト切替
+$bp-tb-max: 1023px;  // ~1023px: SP＋タブレット上限（max-width用）
+$bp-wide:   1441px;  // 1441px~: max-width中央寄せ
 
 // Transition
 $transition: 0.3s ease;

@@ -13,7 +13,8 @@
   transition: background-color 0.3s ease;
 
   // スクロール後に背景を付ける（JSで .is-scrolled を付与）
-  &.is-scrolled {
+  &.is-scrolled,
+  &--page {
     background-color: v.$color-white;
 
     .l-header__logo-white { display: none; }
@@ -27,7 +28,7 @@
     }
   }
 
-  @media screen and (max-width: v.$bp-sp) {
+  @media screen and (max-width: v.$bp-tb-max) {
     height: 45px;
     padding-top: 8px;
   }
@@ -36,11 +37,11 @@
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 30px;
-    gap: 40px;
+    padding: 0 23px 0 30px;
+    gap: 36px;
 
-    @media screen and (max-width: v.$bp-sp) {
-      padding: 0 12px;
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding: 0 5px 0 12px;
     }
   }
 
@@ -48,9 +49,10 @@
     width: 250px;
     flex-shrink: 0;
 
-    @media screen and (max-width: v.$bp-sp) {
-      width: 154px;
-      height: 38px;
+    @media screen and (max-width: v.$bp-tb-max) {
+      width: 150px;
+      height: 40px;
+      padding-top: 3px;
     }
 
     img {
@@ -80,7 +82,7 @@
     gap: 22px;
     margin-left: auto;
 
-    @media screen and (max-width: v.$bp-sp) {
+    @media screen and (max-width: v.$bp-tb-max) {
       display: none;
     }
   }
@@ -107,7 +109,7 @@
 
     // ENTRYボタン（ゴールド）
     &--gold {
-      background-color: v.$color-gold;
+      background-color: v.$color-gold-light;
       color: v.$color-white;
       padding: 14px 41px;
     }
@@ -121,11 +123,12 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding-top: 4px;
     color: v.$color-white;
 
-    @media screen and (max-width: v.$bp-sp) {
+    @media screen and (max-width: v.$bp-tb-max) {
       margin-left: auto;
+      
     }
   }
 
@@ -137,7 +140,7 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 
 
-    @media screen and (max-width: v.$bp-sp) {
+    @media screen and (max-width: v.$bp-tb-max) {
       width: 32px;
       height: 2px;
     }
@@ -146,7 +149,7 @@
       margin-top: 14px;
     }
 
-    @media screen and (max-width: v.$bp-sp) {
+    @media screen and (max-width: v.$bp-tb-max) {
       & + & {
         margin-top: 7px;
       }
@@ -156,9 +159,8 @@
   &__hamburger-text {
     margin-top: 6px;
     font-size: 12px;
-    letter-spacing: 0.08em;
     color: v.$color-white;
-    @media screen and (max-width: v.$bp-sp) {
+    @media screen and (max-width: v.$bp-tb-max) {
       font-size: 10px;
       letter-spacing: normal;
       margin-top: 1px;
@@ -174,13 +176,21 @@
       opacity: 0;
     }
     .l-header__hamburger-line:nth-child(1) {
-      transform: translateY(6px) rotate(45deg);
+      transform: translateY(16px) rotate(45deg);
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        transform: translateY(9px) rotate(45deg);
+      }
     }
     .l-header__hamburger-line:nth-child(2) {
       opacity: 0;
     }
     .l-header__hamburger-line:nth-child(3) {
-      transform: translateY(-6px) rotate(-45deg);
+      transform: translateY(-16px) rotate(-45deg);
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
     }
   }
 }
@@ -208,7 +218,7 @@
       height: 100%;
       min-height: 100vh;
   
-      @media screen and (max-width: v.$bp-sp) {
+      @media screen and (max-width: v.$bp-tb-max) {
         flex-direction: column;
       }
     }
@@ -218,8 +228,8 @@
       width: 50%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 120px 40px 60px;
+      justify-content: flex-end;
+      padding: 120px 64px 60px 40px;
       position: relative;
 
       &::after {
@@ -233,14 +243,15 @@
         background-color: v.$color-gold-light;
       }
   
-      @media screen and (max-width: v.$bp-sp) {
+      @media screen and (max-width: v.$bp-tb-max) {
         display: none;
       }
     }
   
     &__logo {
       width: 100%;
-      max-width: 200px;
+      max-width: 250px;
+      padding-bottom: 60px;
 
       img {
         width: 100%;
@@ -252,14 +263,12 @@
       width: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 120px 80px 60px;
+      padding: 208px 104px 208px 63px;
 
-      @media screen and (max-width: v.$bp-sp) {
+      @media screen and (max-width: v.$bp-tb-max) {
         width: 100%;
         height: 100vh;
-        padding: 80px 24px 32px;
-        justify-content: center;
+        padding: 90px 12px 32px;
         overflow: hidden;
       }
     }
@@ -269,19 +278,25 @@
       display: grid;
       grid-template-rows: repeat(3, auto);
       grid-auto-flow: column;
-      gap: 30px;
-      margin-bottom: 40px;
+      column-gap: 30px;
+      margin-bottom: 50px;
 
-      @media screen and (max-width: v.$bp-sp) {
+      @media screen and (max-width: v.$bp-tb-max) {
         grid-template-rows: none;
         grid-auto-flow: row;
         gap: 0;
-        margin-bottom: 24px;
+        margin-bottom: 53px;
       }
     }
   
     &__item {
       border-bottom: 1px solid v.$color-gold-light;
+      max-width: 248px;
+      width: 100%;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        max-width: none;
+      }
 
       &:first-child,
       &:nth-child(4) {
@@ -292,38 +307,40 @@
     &__link {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 20px 0;
+      padding: 22px 0;
       transition: opacity 0.3s ease;
   
       &:hover {
         opacity: 0.6;
       }
 
-      @media screen and (max-width: v.$bp-sp) {
-        padding: 12px 0;
+      @media screen and (max-width: v.$bp-tb-max) {
+        padding: 12px 0 11px;
       }
     }
 
     &__link-en {
-      font-family: v.$font-en;
-      font-size: 24px;
-      font-weight: 700;
+      font-family: 'Viga', sans-serif;
+      font-size: 32px;
+      font-weight: 400;
       color: v.$color-black;
-      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+      line-height: 1;
 
-      @media screen and (max-width: v.$bp-sp) {
+      @media screen and (max-width: v.$bp-tb-max) {
         font-size: 18px;
+        margin-bottom: 11px;
       }
     }
 
     &__link-ja {
-      font-size: 12px;
+      font-size: 16px;
       color: v.$color-black;
-      letter-spacing: 0.05em;
+      line-height: 1;
 
-      @media screen and (max-width: v.$bp-sp) {
-        font-size: 10px;
+      @media screen and (max-width: v.$bp-tb-max) {
+        font-size: 12px;
+        padding-left: 1px;
       }
     }
   
@@ -331,7 +348,11 @@
     &__cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 30px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        gap: 12px;
+      }
     }
   
     &__btn {
@@ -340,10 +361,9 @@
       justify-content: center;
       width: 100%;
       max-width: 248px;
-      min-height: 52px;
+      min-height: 42px;
       font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
+      font-weight: 700;
       transition: opacity 0.3s ease;
 
       &:hover {
@@ -356,7 +376,7 @@
       }
   
       &--gold {
-        background-color: v.$color-gold;
+        background-color: v.$color-gold-light;
         color: v.$color-white;
       }
     }

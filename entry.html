@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry - tetote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;700&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/scss/style.scss">
+</head>
+<body>
+
+    <header class="l-header l-header--page">
+        <div class="l-header__inner">
+
+          <a href="/" class="l-header__logo">
+            <img class="l-header__logo-white" src="/images/logo-white.svg" alt="TETOTE.co.ltd RECRUITING">
+            <img class="l-header__logo-black" src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+          </a>
+
+          <div class="l-header__cta">
+            <a href="/detail.html" class="l-header__btn l-header__btn--black">募集要項</a>
+            <a href="/entry.html" class="l-header__btn l-header__btn--gold">ENTRY</a>
+          </div>
+
+          <button
+            class="l-header__hamburger"
+            id="js-hamburger"
+            aria-expanded="false"
+            aria-controls="js-global-menu"
+            aria-label="メニューを開く"
+            type="button"
+          >
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-text">MENU</span>
+          </button>
+
+        </div>
+    </header>
+
+    <div class="l-hamburger-menu" id="js-global-menu" aria-hidden="true">
+      <div class="l-hamburger-menu__inner">
+
+        <div class="l-hamburger-menu__logo-area">
+          <a href="/" class="l-hamburger-menu__logo">
+            <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+          </a>
+        </div>
+
+        <nav class="l-hamburger-menu__nav">
+          <ul class="l-hamburger-menu__list">
+            <li class="l-hamburger-menu__item">
+              <a href="/about.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">ABOUT US</span>
+                <span class="l-hamburger-menu__link-ja">TETOTEについて</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/staff.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">STAFF</span>
+                <span class="l-hamburger-menu__link-ja">社員について</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/blog.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">BLOG</span>
+                <span class="l-hamburger-menu__link-ja">採用ブログ</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/benefits.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">BENEFITS</span>
+                <span class="l-hamburger-menu__link-ja">福利厚生について</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/career.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">CAREER</span>
+                <span class="l-hamburger-menu__link-ja">研修制度とキャリアパス</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/faq.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">FAQ</span>
+                <span class="l-hamburger-menu__link-ja">よくある質問</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="l-hamburger-menu__cta">
+            <a href="/detail.html" class="l-hamburger-menu__btn l-hamburger-menu__btn--black">募集要項</a>
+            <a href="/entry.html" class="l-hamburger-menu__btn l-hamburger-menu__btn--gold">ENTRY</a>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <main class="l-page-main">
+
+        <!-- パンくず -->
+        <nav class="c-breadcrumb" aria-label="パンくずリスト">
+          <div class="c-breadcrumb__inner">
+            <ol class="c-breadcrumb__list">
+              <li class="c-breadcrumb__item">
+                <a href="/" class="c-breadcrumb__link">TOP</a>
+              </li>
+              <li class="c-breadcrumb__item">ENTRY</li>
+            </ol>
+          </div>
+        </nav>
+
+        <!-- エントリーフォーム -->
+        <section class="p-entry">
+          <div class="p-entry__inner">
+            <div class="p-entry__wrapper">
+
+              <p class="p-entry__form-label">ENTRY FORM</p>
+                <h2 class="p-entry__heading">
+                  <span class="p-entry__heading-gold">新卒・中途採用</span>エントリーフォーム
+                </h2>
+                <p class="p-entry__desc">当社へ入社ご希望の方は、下記の送信フォームより送信して下さい。</p>
+                <p class="p-entry__note"><span class="p-entry__required-mark">※</span>は必須項目になります。</p>
+
+
+              <form class="p-entry__form" id="js-entry-form" novalidate>
+
+                <!-- お名前 -->
+                <div class="p-entry__field">
+                  <label class="p-entry__label" for="entry-name">
+                    お名前<span class="p-entry__required-mark">※</span>
+                  </label>
+                  <div class="p-entry__control">
+                    <input
+                      class="p-entry__input"
+                      type="text"
+                      id="entry-name"
+                      name="name"
+                      placeholder="例：山田太郎"
+                      required
+                      autocomplete="name"
+                    >
+                  </div>
+                </div>
+
+                <!-- お名前カナ -->
+                <div class="p-entry__field">
+                  <label class="p-entry__label" for="entry-name-kana">
+                    お名前カナ<span class="p-entry__required-mark">※</span>
+                  </label>
+                  <div class="p-entry__control">
+                    <input
+                      class="p-entry__input"
+                      type="text"
+                      id="entry-name-kana"
+                      name="name_kana"
+                      placeholder="例：ヤマダタロウ"
+                      required
+                      autocomplete="off"
+                    >
+                  </div>
+                </div>
+
+                <!-- メールアドレス -->
+                <div class="p-entry__field">
+                  <label class="p-entry__label" for="entry-email">
+                    メールアドレス<span class="p-entry__required-mark">※</span>
+                  </label>
+                  <div class="p-entry__control">
+                    <input
+                      class="p-entry__input"
+                      type="email"
+                      id="entry-email"
+                      name="email"
+                      placeholder="例：tetote@gmail.com"
+                      required
+                      autocomplete="email"
+                    >
+                  </div>
+                </div>
+
+                <!-- 電話番号 -->
+                <div class="p-entry__field">
+                  <label class="p-entry__label" for="entry-tel">
+                    電話番号<span class="p-entry__required-mark">※</span>
+                  </label>
+                  <div class="p-entry__control">
+                    <input
+                      class="p-entry__input"
+                      type="tel"
+                      id="entry-tel"
+                      name="tel"
+                      placeholder="例：00-0000-0000"
+                      required
+                      autocomplete="tel"
+                    >
+                  </div>
+                </div>
+
+                <!-- 生年月日 -->
+                <div class="p-entry__field">
+                  <label class="p-entry__label" id="entry-birthday-label">
+                    生年月日<span class="p-entry__required-mark">※</span>
+                  </label>
+                  <div class="p-entry__control">
+                    <div class="p-entry__birthday" role="group" aria-labelledby="entry-birthday-label">
+                      <div class="p-entry__birthday-unit">
+                        <input
+                          class="p-entry__input p-entry__input--year"
+                          type="text"
+                          id="entry-birth-year"
+                          name="birth_year"
+                          placeholder="例：2000"
+                          maxlength="4"
+                          inputmode="numeric"
+                          required
+                          aria-label="生年"
+                        >
+                        <span class="p-entry__birthday-suffix">年</span>
+                      </div>
+                      <div class="p-entry__birthday-unit">
+                        <select
+                          class="p-entry__select"
+                          id="entry-birth-month"
+                          name="birth_month"
+                          required
+                          aria-label="生月"
+                        >
+                          <option value="">選択してください</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <span class="p-entry__birthday-suffix">月</span>
+                      </div>
+                      <div class="p-entry__birthday-unit">
+                        <select
+                          class="p-entry__select"
+                          id="entry-birth-day"
+                          name="birth_day"
+                          required
+                          aria-label="生日"
+                        >
+                          <option value="">選択してください</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                          <option value="16">16</option>
+                          <option value="17">17</option>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                          <option value="22">22</option>
+                          <option value="23">23</option>
+                          <option value="24">24</option>
+                          <option value="25">25</option>
+                          <option value="26">26</option>
+                          <option value="27">27</option>
+                          <option value="28">28</option>
+                          <option value="29">29</option>
+                          <option value="30">30</option>
+                          <option value="31">31</option>
+                        </select>
+                        <span class="p-entry__birthday-suffix">日</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 希望職種 -->
+                <div class="p-entry__field">
+                  <div class="p-entry__label" id="entry-job-label">
+                    希望職種<span class="p-entry__required-mark">※</span>
+                  </div>
+                  <div class="p-entry__control">
+                    <fieldset class="p-entry__fieldset" aria-labelledby="entry-job-label">
+                      <legend class="u-visually-hidden">希望職種</legend>
+                      <label class="p-entry__radio-label">
+                        <input
+                          class="p-entry__radio"
+                          type="radio"
+                          name="job"
+                          value="consultant"
+                          required
+                          checked
+                        >
+                        <span>コンサルタント</span>
+                      </label>
+                      <label class="p-entry__radio-label">
+                        <input
+                          class="p-entry__radio"
+                          type="radio"
+                          name="job"
+                          value="solution-sales"
+                        >
+                        <span>ソリューション営業</span>
+                      </label>
+                      <label class="p-entry__radio-label">
+                        <input
+                          class="p-entry__radio"
+                          type="radio"
+                          name="job"
+                          value="system-engineer"
+                        >
+                        <span>システムエンジニア</span>
+                      </label>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <!-- 自己PR -->
+                <div class="p-entry__field p-entry__field-pr">
+                  <label class="p-entry__label" for="entry-pr">
+                    自己PR<span class="p-entry__required-mark">※</span>
+                  </label>
+                  <div class="p-entry__control">
+                    <textarea
+                      class="p-entry__textarea"
+                      id="entry-pr"
+                      name="pr"
+                      placeholder="例：志望動機、自己PR"
+                      required
+                      rows="7"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- きっかけ -->
+                <div class="p-entry__field p-entry__field-source">
+                  <div class="p-entry__label" id="entry-source-label">
+                    当社を知ったきっかけを教えて下さい。
+                  </div>
+                  <div class="p-entry__control">
+                    <fieldset class="p-entry__fieldset" aria-labelledby="entry-source-label">
+                      <legend class="u-visually-hidden">当社を知ったきっかけ</legend>
+                      <label class="p-entry__checkbox-label">
+                        <input class="p-entry__checkbox" type="checkbox" name="source" value="twitter" checked>
+                        <span>X(旧Twitter)</span>
+                      </label>
+                      <label class="p-entry__checkbox-label">
+                        <input class="p-entry__checkbox" type="checkbox" name="source" value="facebook">
+                        <span>Facebook</span>
+                      </label>
+                      <label class="p-entry__checkbox-label">
+                        <input class="p-entry__checkbox" type="checkbox" name="source" value="instagram">
+                        <span>Instagram</span>
+                      </label>
+                      <label class="p-entry__checkbox-label">
+                        <input class="p-entry__checkbox" type="checkbox" name="source" value="search">
+                        <span>検索広告</span>
+                      </label>
+                      <label class="p-entry__checkbox-label">
+                        <input class="p-entry__checkbox" type="checkbox" name="source" value="referral">
+                        <span>知人友人・親戚</span>
+                      </label>
+                      <label class="p-entry__checkbox-label">
+                        <input class="p-entry__checkbox" type="checkbox" name="source" value="other">
+                        <span>その他</span>
+                      </label>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <!-- 個人情報同意 -->
+                <div class="p-entry__privacy">
+                  <label class="p-entry__privacy-label">
+                    <input
+                      class="p-entry__checkbox p-entry__checkbox--privacy"
+                      type="checkbox"
+                      name="privacy"
+                      id="entry-privacy"
+                      required
+                    >
+                    <span>個人情報保護方針に同意する</span>
+                  </label>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="p-entry__submit">
+                  <button
+                    class="p-entry__btn"
+                    type="submit"
+                    id="js-entry-submit"
+                    disabled
+                  >送信する</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </section>
+
+    </main>
+
+    <footer class="l-footer">
+
+        <div class="l-footer__cta">
+          <div class="l-footer__cta-inner">
+            <p class="l-footer__cta-text">
+              わたしたちと一緒に働く仲間を募集中です。<br>
+              少数精鋭のチームで、<br>
+              あなたも会社も一緒に成長していきましょう。
+            </p>
+            <a href="/entry.html" class="l-footer__cta-btn">
+              ENTRY
+              <span class="l-footer__cta-btn-arrow">›</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="l-footer__card">
+          <div class="l-footer__card-inner">
+
+            <div class="l-footer__body">
+              <div class="l-footer__body-inner">
+
+                <div class="l-footer__logo-wrap l-footer__logo-wrap--pc">
+                  <a href="/" class="l-footer__logo">
+                    <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+                  </a>
+                </div>
+
+                <nav class="l-footer__nav">
+                  <ul class="l-footer__nav-list">
+                    <li class="l-footer__nav-item">
+                      <a href="/" class="l-footer__nav-link">ホーム</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/about.html" class="l-footer__nav-link">TETOTEについて</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/staff.html" class="l-footer__nav-link">人を知る</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/career.html" class="l-footer__nav-link">研修制度とキャリアパス</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/benefits.html" class="l-footer__nav-link">福利厚生</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/blog.html" class="l-footer__nav-link">採用ブログ</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/detail.html" class="l-footer__nav-link">募集要項</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/faq.html" class="l-footer__nav-link">よくある質問</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/company.html" class="l-footer__nav-link">会社概要</a>
+                    </li>
+                  </ul>
+                </nav>
+
+              </div>
+            </div>
+
+            <div class="l-footer__bottom">
+              <div class="l-footer__bottom-inner">
+
+                <ul class="l-footer__sns">
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="Facebook">
+                      <img src="/images/FACEBOOK.svg" alt="Facebook" width="20" height="20">
+                    </a>
+                  </li>
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="Twitter">
+                      <img src="/images/twitter.svg" alt="Twitter" width="20" height="20">
+                    </a>
+                  </li>
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="YouTube">
+                      <img src="/images/YouTube.svg" alt="YouTube" width="20" height="20">
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="l-footer__logo-wrap l-footer__logo-wrap--sp">
+                  <a href="/" class="l-footer__logo">
+                    <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+                  </a>
+                </div>
+
+                <small class="l-footer__copyright">
+                  &copy;2024 TETOTE All Right Reserved.
+                </small>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    </footer>
+
+    <script type="module" src="/js/script.js"></script>
+</body>
+</html>

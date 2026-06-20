@@ -1,0 +1,433 @@
+@use '../../foundation/variable' as v;
+
+// =====================================================
+// entry.html — エントリーフォーム
+// =====================================================
+.p-entry {
+  padding-bottom: 139px;
+  
+  @media screen and (max-width: v.$bp-tb-max) {
+    padding-bottom: 100px;
+  }
+  
+  &__inner {
+    background-color: v.$color-beige;
+    margin-inline: auto;
+    padding-top: 34px;
+    padding-bottom: 54px;
+    padding-inline: 22px;
+  }
+
+  &__wrapper {
+    max-width: 880px;
+    margin-inline: auto;
+    padding-inline: 71px;
+    background-color: v.$color-white;
+    border-radius: 10px;
+    padding-top: 51px;
+    padding-bottom: 81px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding-inline: 20px;
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+  }
+
+  // ENTRY FORM ラベル
+  &__form-label {
+    font-family: v.$font-main;
+    font-size: 24px;
+    font-weight: 400;
+    color: v.$color-black;
+    margin-bottom: 21px;
+    text-align: center;
+    
+  }
+
+  // 見出し
+  
+
+  &__heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: v.$color-black;
+    line-height: 1;
+    margin-bottom: 51px;
+    text-align: center;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 18px;
+    }
+  }
+
+  &__heading-gold {
+    color: v.$color-gold;
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 1.5;
+    color: v.$color-black;
+    padding-inline: 15.5%;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 14px;
+      padding-inline: 0;
+    }
+  }
+
+  &__note {
+    font-size: 16px;
+    color: v.$color-black;
+    margin-bottom: 90px;
+    padding-inline: 15.5%;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 14px;
+      margin-bottom: 40px;
+      padding-inline: 0;
+    }
+  }
+
+  &__required-mark {
+    color: v.$color-gold;
+  }
+
+
+  // フォーム行
+  &__form {
+    border-top: 1px dashed v.$color-gold-light;
+    padding-top: 97px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding-top: 40px;
+    }
+  }
+
+  &__field {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 27px;
+    
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding-bottom: 20px;
+    }
+
+    
+  }
+
+  &__field-pr{
+    margin-bottom: 21px;
+  }
+
+  &__field-source {
+    margin-bottom: 92px;
+    .p-entry__label {
+      line-height: 1.5;
+      padding-top: 16px;
+    }
+    .p-entry__fieldset {
+      gap: 15px;
+    }
+    .p-entry__checkbox-label {
+      gap: 11px;
+    }
+    .p-entry__checkbox{
+      border-radius: 0;
+    }
+  }
+
+  &__label {
+    flex-shrink: 0;
+    width: 140px;
+    font-size: 16px;
+    color: v.$color-black;
+    padding-top: 19px;
+    line-height: 1;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      width: auto;
+      padding-top: 0;
+    }
+  }
+
+  &__control {
+    flex: 1;
+    min-width: 0;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      width: 100%;
+    }
+  }
+
+  // 共通入力スタイル
+  &__input,
+  &__select,
+  &__textarea {
+    width: 100%;
+    background-color: v.$color-beige;
+    border: 1px solid v.$color-gold;
+    border-radius: 10px;
+    padding: 14px 15px 13px 18px;
+    font-size: 16px;
+    font-family: v.$font-main;
+    color: v.$color-black;
+    appearance: none;
+
+    &::placeholder {
+      color: #757575;
+    }
+
+    &:focus {
+      outline: 2px solid v.$color-gold;
+      outline-offset: 1px;
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 16px;
+    }
+  }
+
+  &__input--year {
+    width: 168px;
+  }
+
+  // 生年月日
+  &__birthday {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 27px;
+
+  }
+
+  &__birthday-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:first-child {
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      width: 192px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        width: calc(50% - 13.5px);
+      }
+    }
+  }
+
+  &__birthday &__select {
+    width: 100%;
+    min-width: 0;
+    padding-top: 16px;
+    padding-bottom: 17px;
+  }
+
+  &__birthday-suffix {
+    font-size: 16px;
+    color: v.$color-black;
+    white-space: nowrap;
+  }
+
+  &__select {
+    width: auto;
+    min-width: 140px;
+    padding-right: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23988C2C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  // フィールドセット（radio / checkbox グループ）
+  &__fieldset {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 13px;
+    margin-left: -6px;
+  }
+
+  // ラジオボタン
+  &__radio-label,
+  &__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: v.$color-black;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 14px;
+    }
+  }
+
+  &__radio {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    appearance: none;
+    background-color: v.$color-beige;
+    border: 1px solid v.$color-gold;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-image v.$transition;
+
+    &:checked {
+      background-image: radial-gradient(circle, v.$color-black 38%, v.$color-beige 38%);
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$color-gold;
+      outline-offset: 2px;
+    }
+  }
+
+  &__checkbox {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    appearance: none;
+    background-color: v.$color-beige;
+    border: 1px solid v.$color-gold;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:checked {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='7' y='7' width='10' height='10' fill='%23222222'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$color-gold;
+      outline-offset: 2px;
+    }
+
+    &--privacy {
+      width: 16px;
+      height: 16px;
+      border-radius: 0;
+    }
+  }
+
+  // テキストエリア
+  &__textarea {
+    resize: vertical;
+    min-height: 160px;
+    padding-bottom: 33px;
+  }
+
+  // 個人情報同意
+  &__privacy {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 57px;
+  }
+
+  &__privacy-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: v.$color-black;
+    cursor: pointer;
+  }
+
+  // サンクスメッセージ
+  &-thanks {
+    text-align: center;
+
+    &__inner {
+      padding-bottom: 58px;
+    }
+
+    &__wrapper {
+      padding-top: 59px;
+      padding-bottom: 95px;
+    }
+
+    &__heading {
+      font-size: 32px;
+      font-weight: 700;
+      color: v.$color-black;
+      line-height: 1;
+      margin-bottom: 50px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        font-size: 22px;
+      }
+
+      @media screen and (max-width: v.$bp-sp-max) {
+        font-size: 18px;
+      }
+    }
+
+    &__desc {
+      font-size: 16px;
+      line-height: 1.5;
+      color: v.$color-black;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: v.$bp-sp-max) {
+        font-size: 10px;
+        
+      }
+    }
+  }
+
+  // 送信ボタン
+  &__submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 256px;
+    padding: 14px 40px;
+    border: 1px solid v.$color-black;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: v.$font-main;
+    color: v.$color-black;
+    background-color: v.$color-white;
+    cursor: pointer;
+    transition: background-color v.$transition, color v.$transition;
+
+    &:not(:disabled):hover {
+      background-color: v.$color-black;
+      color: v.$color-white;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+}

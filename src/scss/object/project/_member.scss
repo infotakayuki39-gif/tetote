@@ -1,0 +1,269 @@
+@use '../../foundation/variable' as v;
+
+.p-member {
+  padding: 42px 0;
+  overflow: hidden;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    padding: 3px 0 0;
+  }
+
+  &__head {
+    margin-bottom: 0;
+    padding: 0 76px;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding: 0 17px;
+    }
+  }
+
+  &__head-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__bg-text {
+    position: absolute;
+    top: -13%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 136px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.06);
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 80px;
+      top: -5%;
+    }
+  }
+
+  &__title-wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 47px;
+    margin-left: 167px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      margin-left: 0;
+      gap: 35px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+    color: v.$color-black;
+    display: inline-block;
+    border-bottom: none;
+    padding-top: 18px;
+    padding-bottom: 6px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 12%;
+      height: 3px;
+      background-color: v.$color-black;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        width: 9%;
+        bottom: 2px;
+      }
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 32px;
+    }
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 1.5;
+    color: v.$color-black;
+
+    
+  }
+
+  &__slider {
+    overflow: visible !important;
+  }
+
+  &__slide {
+    // Swiper loop mode はDOMを並び替えるため nth-child が壊れる → クラスで制御
+    &--stagger {
+      margin-top: 36px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        margin-top: 26px;
+      }
+    }
+
+    // slidesPerView: 'auto' 時、Swiper CSS の width:100% を上書き
+    width: 300px !important;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      width: 246px !important;
+    }
+  }
+
+  &__card {
+    display: block;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__card-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 300 / 379;
+    border-radius: 30px;
+    background-color: #e8e8e8;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: inherit;
+    }
+
+  }
+
+  &__card-catch {
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  &__card-catch-line {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: v.$color-gold;
+    color: v.$color-black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 7px;
+    line-height: 1;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 16px;
+      padding: 7px;
+    }
+  }
+
+  &__card-body {
+    margin-top: 30px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      margin-top: 27px;
+    }
+  }
+
+  &__card-meta {
+    font-size: 16px;
+    color: v.$color-black;
+    margin-bottom: 1px;
+    font-weight: 700;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__card-job {
+    margin-right: 7px;
+  }
+
+  &__card-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: v.$color-black;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 20px;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 72px;
+    padding: 0 40px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding: 0 20px;
+      margin-top: 55px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    left: calc(50% + 358px); // 50% + min-width(277px)÷2 + 180px
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      display: none;
+    }
+  }
+
+  &__nav-btn {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 1px solid v.$color-black;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+
+
+    img {
+      width: 16px;
+    }
+
+    img + img {
+      display: none;
+    }
+
+    &:hover {
+      width: 70px;
+      height: 70px;
+      background-color: v.$color-black;
+
+      img:first-child { display: none; }
+      img + img { display: block; }
+    }
+
+
+    &.swiper-button-disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
+}

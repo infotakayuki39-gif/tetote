@@ -5,9 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
+  width: 100%;
   margin-inline: auto;
-  min-width: 277px;
+  max-width: 355px;
   min-height: 62px;
   padding: 22px 23px;
   border: 1px solid v.$color-black;
@@ -19,9 +19,10 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 
 
-  @media screen and (max-width: v.$bp-sp) {
+  @media screen and (max-width: v.$bp-tb-max) {
     padding: 16px;
     font-size: 16px;
+    width: 82%;
   }
 
   &::after {
@@ -36,7 +37,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 
-    @media screen and (max-width: v.$bp-sp) {
+    @media screen and (max-width: v.$bp-tb-max) {
       width: 16px;
       height: 16px;
       right: 16px;

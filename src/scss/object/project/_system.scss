@@ -1,0 +1,291 @@
+@use '../../foundation/variable' as v;
+
+.p-system {
+  padding: 77px 40px 106px;
+  overflow: hidden;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    padding: 36px 18px 78px;
+  }
+
+  &__head {
+    position: relative;
+    text-align: center;
+    margin-bottom: 147px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      text-align: left;
+      margin-bottom: 108px;
+    }
+  }
+
+  &__bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 136px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.06);
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 80px;
+      left: 0;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__title-wrap {
+    position: relative;
+    top: 33px;
+    z-index: 1;
+    @media screen and (max-width: v.$bp-tb-max) {
+      top: 59px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+    color: v.$color-black;
+    display: inline-block;
+    padding-bottom: 6px;
+    margin-bottom: 44px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 63%;
+      height: 2px;
+      background-color: v.$color-black;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        width: 61%;
+      }
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 32px;
+      margin-bottom: 38px;
+
+    }
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 1;
+    padding-left: 48px;
+    color: v.$color-black;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      line-height: 1.5;
+      padding-left: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    max-width: 1000px;
+    margin-inline: auto;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      grid-template-columns: 1fr;
+      gap: 33px;
+    }
+  }
+
+  &__item {
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      .p-system__item-img img {
+        transform: scale(1.08);
+      }
+
+      .p-system__item-arrow {
+        transform: translateX(6px);
+      }
+    }
+  }
+
+  &__item-img-wrap {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  &__item-img {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: v.$color-beige;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      max-width: 251px;
+    }
+
+    img {
+      width: 75%;
+      height: 75%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+  }
+
+  &__list {
+    > :nth-child(1) .p-system__item-img > img {
+      width: 327px;
+      height: 277px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        width: 194px;
+        height: 164px;
+      }
+    }
+
+    > :nth-child(2) .p-system__item-img > img {
+      width: 344px;
+      height: 230px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        width: 202px;
+        height: 135px;
+      }
+    }
+
+    > :nth-child(1) .p-system__item-en {
+      top: 32%;
+      right: -109px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        top: 32.6%;
+        right: -60px;
+      }
+    }
+
+    > :nth-child(2) .p-system__item-en {
+      top: 30.9%;
+      right: -96px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        top: 31.3%;
+        right: -55px;
+      }
+    }
+  }
+
+  &__item-en {
+    position: absolute;
+    top: 35%;
+    right: -124px;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center center;
+    font-family: v.$font-vigo, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: v.$color-black;
+    white-space: nowrap;
+    letter-spacing: 0.15em;
+    z-index: 1;
+    pointer-events: none;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 14px;
+      right: -60px;
+    }
+  }
+
+  &__item-arrow {
+    position: absolute;
+    bottom: 65px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: v.$color-black;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    z-index: 2;
+
+    img {
+      width: 17px;
+      height: 15px;
+      display: block;
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      bottom: 38px;
+      right: 12px;
+      width: 42px;
+      height: 42px;
+
+      
+    }
+  }
+
+  &__item-body {
+    position: relative;
+    margin-top: -45px;
+    text-align: center;
+    z-index: 1;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      margin-top: -15px;
+    }
+  }
+
+  &__item-title {
+    display: inline;
+    font-size: 32px;
+    font-weight: 700;
+    color: v.$color-black;
+    background-color: v.$color-gold-light;
+    line-height: 1;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0px 9px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 24px;
+      padding: 1px 8px;
+    }
+  }
+
+  &__item-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: v.$color-black;
+    margin-top: 35px;
+    text-align: left;
+    padding-left: 21px;
+    width: 450px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 23px;
+    }
+  }
+}

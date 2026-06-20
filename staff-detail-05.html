@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高田 凛 - Staff - tetote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;700&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/scss/style.scss">
+</head>
+<body>
+
+    <header class="l-header l-header--page">
+        <div class="l-header__inner">
+
+          <!-- ロゴ -->
+          <a href="/" class="l-header__logo">
+            <img class="l-header__logo-white" src="/images/logo-white.svg" alt="TETOTE.co.ltd RECRUITING">
+            <img class="l-header__logo-black" src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+          </a>
+
+          <!-- CTAボタン -->
+          <div class="l-header__cta">
+            <a href="/entry.html#requirements" class="l-header__btn l-header__btn--black">募集要項</a>
+            <a href="/entry.html" class="l-header__btn l-header__btn--gold">ENTRY</a>
+          </div>
+
+          <!-- ハンバーガー -->
+          <button
+            class="l-header__hamburger"
+            id="js-hamburger"
+            aria-expanded="false"
+            aria-controls="js-global-menu"
+            aria-label="メニューを開く"
+            type="button"
+          >
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-text">MENU</span>
+          </button>
+
+        </div>
+    </header>
+
+    <!-- ドロワーメニュー -->
+    <div class="l-hamburger-menu" id="js-global-menu" aria-hidden="true">
+      <div class="l-hamburger-menu__inner">
+
+        <!-- 左：ロゴエリア（PC用） -->
+        <div class="l-hamburger-menu__logo-area">
+          <a href="/" class="l-hamburger-menu__logo">
+            <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+          </a>
+        </div>
+
+        <!-- 右：ナビエリア -->
+        <nav class="l-hamburger-menu__nav">
+          <ul class="l-hamburger-menu__list">
+            <li class="l-hamburger-menu__item">
+              <a href="/about.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">ABOUT US</span>
+                <span class="l-hamburger-menu__link-ja">TETOTEについて</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/staff.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">STAFF</span>
+                <span class="l-hamburger-menu__link-ja">社員について</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/blog.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">BLOG</span>
+                <span class="l-hamburger-menu__link-ja">採用ブログ</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/benefits.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">BENEFITS</span>
+                <span class="l-hamburger-menu__link-ja">福利厚生について</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/career.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">CAREER</span>
+                <span class="l-hamburger-menu__link-ja">研修制度とキャリアパス</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/faq.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">FAQ</span>
+                <span class="l-hamburger-menu__link-ja">よくある質問</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- ボタン -->
+          <div class="l-hamburger-menu__cta">
+            <a href="/entry.html#requirements" class="l-hamburger-menu__btn l-hamburger-menu__btn--black">募集要項</a>
+            <a href="/entry.html" class="l-hamburger-menu__btn l-hamburger-menu__btn--gold">ENTRY</a>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <main class="l-page-main">
+
+        <!-- スタッフ詳細FV -->
+        <section class="p-staff-fv">
+          <div class="p-staff-fv__inner">
+
+            <div class="p-staff-fv__content">
+              <div class="p-staff-fv__catch">
+                <h1 class="p-staff-fv__catch-main">どんな難解な案件も</h1>
+                <p class="p-staff-fv__catch-sub">チームで突破できる強い連携</p>
+              </div>
+              <p class="p-staff-fv__job">コンサルタント</p>
+              <div class="p-staff-fv__name-row">
+                <span class="p-staff-fv__name">高田 凛</span>
+                <span class="p-staff-fv__year">2006年入社</span>
+              </div>
+              <p class="p-staff-fv__desc">東洋大学経済学部を卒業し、その後一橋大学院でMBAを取得。学生時代からビジネスや経済に興味を持ち、それを深めるために様々な経験を積む。TETOTEに入社してからは、その知識とスキルを活かしながら、クライアントのビジネス課題に対する最適な解決策を提供することに取り組む。</p>
+            </div>
+
+            <div class="p-staff-fv__img-wrap">
+              <img src="/images/p-staff05.png" alt="高田 凛" class="p-staff-fv__img">
+            </div>
+
+          </div>
+        </section>
+
+        <!-- パンくず -->
+        <nav class="c-breadcrumb" aria-label="パンくずリスト">
+          <div class="c-breadcrumb__inner">
+            <ol class="c-breadcrumb__list">
+              <li class="c-breadcrumb__item">
+                <a href="/" class="c-breadcrumb__link">TOP</a>
+              </li>
+              <li class="c-breadcrumb__item">
+                <a href="/staff.html" class="c-breadcrumb__link">STAFF</a>
+              </li>
+              <li class="c-breadcrumb__item">TAKADA</li>
+            </ol>
+          </div>
+        </nav>
+
+        <!-- インタビュー本文 -->
+        <section class="p-staff-interview">
+          <div class="p-staff-interview__inner">
+
+            <!-- メインコンテンツ -->
+            <div class="p-staff-interview__main">
+
+              <article class="p-staff-interview__section" id="staff-business">
+                <h2 class="p-staff-interview__section-title">普段の業務内容について</h2>
+                <div class="p-staff-interview__section-body">
+                  <p class="p-staff-interview__p">私の業務は、主にクライアントとのコミュニケーションを通じて、彼らのビジネス課題を理解し、解決策を提案することです。また、データ分析や市場調査などの具体的な調査活動も行います。さらに、プロジェクトチームと協力して、提案した解決策を実行に移すプロセスにも関与しています。</p>
+                </div>
+              </article>
+
+              <article class="p-staff-interview__section" id="staff-student">
+                <h2 class="p-staff-interview__section-title">学生時代に力を入れたことは？</h2>
+                <div class="p-staff-interview__section-body">
+                  <p class="p-staff-interview__p">学生時代は、経済学やビジネスについての基礎知識を身につけるために努力しました。また、リーダーシップやチームワークを発揮するための経験も積んできました。特に、大学時代に参加したビジネスクラブやインターンシップでの経験が、私の成長に大きく貢献しました。</p>
+                </div>
+              </article>
+
+              <article class="p-staff-interview__section" id="staff-reason">
+                <h2 class="p-staff-interview__section-title">TETOTEを志望した理由は？</h2>
+                <div class="p-staff-interview__section-body">
+                  <p class="p-staff-interview__p">TETOTEは、クライアントとの深い関係を築きながら、ビジネス課題に対する最適な解決策を提供することを重視しています。また、チームワークを重視し、メンバー同士が協力して成長する文化があります。私は、そうした価値観に共感し、自分のスキルを活かしながら成長できる環境で働きたいと考えてTETOTEを選びました。</p>
+                </div>
+              </article>
+
+              <article class="p-staff-interview__section" id="staff-reward">
+                <h2 class="p-staff-interview__section-title">やりがいを感じる瞬間は？</h2>
+                <div class="p-staff-interview__section-body">
+                  <p class="p-staff-interview__p">私が最もやりがいを感じる瞬間は、クライアントが私たちの提案を実行に移し、それが彼らのビジネスにポジティブな影響を与えるときです。また、チームと協力してプロジェクトに取り組む過程での成長や学びも、やりがいの源です。</p>
+                </div>
+              </article>
+
+              <article class="p-staff-interview__section" id="staff-colleague">
+                <h2 class="p-staff-interview__section-title">どんな人と一緒に働きたい？</h2>
+                <div class="p-staff-interview__section-body">
+                  <p class="p-staff-interview__p">私は、柔軟性を持ちながらも、チーム全体の目標に向かって協力し合える人と一緒に働きたいです。また、常に新しいアイデアや解決策を考えることに積極的な人や、クライアントとの良好な関係を築くことに熱心な人とも共に仕事をしたいと考えています。</p>
+                </div>
+              </article>
+
+              <article class="p-staff-interview__section" id="staff-message">
+                <h2 class="p-staff-interview__section-title">応募者へのメッセージ</h2>
+                <div class="p-staff-interview__section-body">
+                  <p class="p-staff-interview__p">TETOTEは、ビジネスコンサルティングの分野でキャリアを築くための素晴らしい場所です。もしも、チャレンジングなプロジェクトに興味をお持ちで、柔軟な働き方やチームワークを重視する方であれば、ぜひTETOTEにご応募ください。私たちはあなたの成長と貢献を期待しています。</p>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- サイドバー（目次） -->
+            <aside class="p-staff-interview__sidebar">
+              <div class="p-staff-interview__toc">
+                <p class="p-staff-interview__toc-label">目次</p>
+                <ul class="p-staff-interview__toc-list">
+                  <li class="p-staff-interview__toc-item">
+                    <a href="#staff-business" class="p-staff-interview__toc-link">普段の業務内容について</a>
+                  </li>
+                  <li class="p-staff-interview__toc-item">
+                    <a href="#staff-student" class="p-staff-interview__toc-link">学生時代に力を入れたことは？</a>
+                  </li>
+                  <li class="p-staff-interview__toc-item">
+                    <a href="#staff-reason" class="p-staff-interview__toc-link">TETOTEを志望した理由は？</a>
+                  </li>
+                  <li class="p-staff-interview__toc-item">
+                    <a href="#staff-reward" class="p-staff-interview__toc-link">やりがいを感じる瞬間は？</a>
+                  </li>
+                  <li class="p-staff-interview__toc-item">
+                    <a href="#staff-colleague" class="p-staff-interview__toc-link">どんな人と一緒に働きたい？</a>
+                  </li>
+                  <li class="p-staff-interview__toc-item">
+                    <a href="#staff-message" class="p-staff-interview__toc-link">応募者へのメッセージ</a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+
+          </div>
+        </section>
+
+        <!-- その他のメンバー -->
+        <section class="p-staff-others">
+          <div class="p-staff-others__inner">
+            <h2 class="p-staff-others__heading">その他のメンバー</h2>
+            <ul class="p-staff__list">
+
+              <li class="p-staff__item">
+                <a href="/staff-detail.html" class="p-staff__card">
+                  <div class="p-staff__card-img">
+                    <img src="/images/member01.jpg" alt="西村 優">
+                    <div class="p-staff__card-catch">
+                      <span class="p-staff__card-catch-line">「あなたが担当で良かった」</span>
+                      <span class="p-staff__card-catch-line">この一言が、最高のやりがい</span>
+                    </div>
+                  </div>
+                  <div class="p-staff__card-body">
+                    <p class="p-staff__card-meta">
+                      <span class="p-staff__card-job">コンサルタント</span>
+                      <span class="p-staff__card-year">2011年入社</span>
+                    </p>
+                    <p class="p-staff__card-name">西村 優</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="p-staff__item">
+                <a href="/staff-detail-03.html" class="p-staff__card">
+                  <div class="p-staff__card-img">
+                    <img src="/images/member03.jpg" alt="青木 美月">
+                    <div class="p-staff__card-catch">
+                      <span class="p-staff__card-catch-line">お客様も知らない課題を</span>
+                      <span class="p-staff__card-catch-line">一緒に探し出す醍醐味</span>
+                    </div>
+                  </div>
+                  <div class="p-staff__card-body">
+                    <p class="p-staff__card-meta">
+                      <span class="p-staff__card-job">ソリューション営業</span>
+                      <span class="p-staff__card-year">2017年入社</span>
+                    </p>
+                    <p class="p-staff__card-name">青木 美月</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="p-staff__item">
+                <a href="/staff-detail-06.html" class="p-staff__card">
+                  <div class="p-staff__card-img">
+                    <img src="/images/member06.jpg" alt="橘 光">
+                    <div class="p-staff__card-catch">
+                      <span class="p-staff__card-catch-line">お客様と一緒に開発</span>
+                      <span class="p-staff__card-catch-line">豊富なプライム案件が魅力です</span>
+                    </div>
+                  </div>
+                  <div class="p-staff__card-body">
+                    <p class="p-staff__card-meta">
+                      <span class="p-staff__card-job">システム事業部課長</span>
+                      <span class="p-staff__card-year">2007年入社</span>
+                    </p>
+                    <p class="p-staff__card-name">橘 光</p>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </section>
+
+    </main>
+
+    <footer class="l-footer">
+
+        <!-- CTAエリア -->
+        <div class="l-footer__cta">
+          <div class="l-footer__cta-inner">
+            <p class="l-footer__cta-text">
+              わたしたちと一緒に働く仲間を募集中です。<br>
+              少数精鋭のチームで、<br>
+              あなたも会社も一緒に成長していきましょう。
+            </p>
+            <a href="/entry.html" class="l-footer__cta-btn">
+              ENTRY
+              <span class="l-footer__cta-btn-arrow">›</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- フッターカード -->
+        <div class="l-footer__card">
+          <div class="l-footer__card-inner">
+
+            <!-- ボディ -->
+            <div class="l-footer__body">
+              <div class="l-footer__body-inner">
+
+                <!-- ロゴ（PCのみ） -->
+                <div class="l-footer__logo-wrap l-footer__logo-wrap--pc">
+                  <a href="/" class="l-footer__logo">
+                    <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+                  </a>
+                </div>
+
+                <!-- ナビ -->
+                <nav class="l-footer__nav">
+                  <ul class="l-footer__nav-list">
+                    <li class="l-footer__nav-item">
+                      <a href="/" class="l-footer__nav-link">ホーム</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/about.html" class="l-footer__nav-link">TETOTEについて</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/staff.html" class="l-footer__nav-link">人を知る</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/career.html" class="l-footer__nav-link">研修制度とキャリアパス</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/benefits.html" class="l-footer__nav-link">福利厚生</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/blog.html" class="l-footer__nav-link">採用ブログ</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/entry.html" class="l-footer__nav-link">募集要項</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/faq.html" class="l-footer__nav-link">よくある質問</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/company.html" class="l-footer__nav-link">会社概要</a>
+                    </li>
+                  </ul>
+                </nav>
+
+              </div>
+            </div>
+
+            <!-- ボトムバー -->
+            <div class="l-footer__bottom">
+              <div class="l-footer__bottom-inner">
+
+                <!-- SNS -->
+                <ul class="l-footer__sns">
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="Facebook">
+                      <img src="/images/FACEBOOK.svg" alt="Facebook" width="20" height="20">
+                    </a>
+                  </li>
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="Twitter">
+                      <img src="/images/twitter.svg" alt="Twitter" width="20" height="20">
+                    </a>
+                  </li>
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="YouTube">
+                      <img src="/images/YouTube.svg" alt="YouTube" width="20" height="20">
+                    </a>
+                  </li>
+                </ul>
+
+                <!-- ロゴ（SPのみ） -->
+                <div class="l-footer__logo-wrap l-footer__logo-wrap--sp">
+                  <a href="/" class="l-footer__logo">
+                    <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+                  </a>
+                </div>
+
+                <!-- コピーライト -->
+                <small class="l-footer__copyright">
+                  &copy;2024 TETOTE All Right Reserved.
+                </small>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    </footer>
+
+    <script type="module" src="/js/script.js"></script>
+</body>
+</html>

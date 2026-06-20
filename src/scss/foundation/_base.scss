@@ -12,7 +12,7 @@ body {
   margin-inline: auto;
   padding: 0 40px;
 
-  @media screen and (max-width: v.$bp-sp) {
+  @media screen and (max-width: v.$bp-tb-max) {
     padding: 0 16px;
   }
 }

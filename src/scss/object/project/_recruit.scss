@@ -1,0 +1,364 @@
+@use '../../foundation/variable' as v;
+
+.p-recruit {
+  padding: 67px 0 138px;
+  background-color: v.$color-beige;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    padding: 64px 0 86px;
+    overflow: hidden;
+  }
+
+  &__inner {
+    max-width: 1024px;
+    margin-inline: auto;
+    padding: 0 31px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding: 0 17px;
+    }
+  }
+
+  &__head {
+    position: relative;
+    text-align: center;
+    margin-bottom: 59px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      text-align: left;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__bg-text {
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 136px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.06);
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 80px;
+      top: 24%;
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      left: 55%;
+    }
+
+    @media screen and (max-width: v.$bp-sp) {
+      font-size: 80px;
+      top: 24%;
+      left: 78%;
+    }
+  }
+
+  &__title-wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-top: 6px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      gap: 30px;
+    }
+  }
+  
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    font-size: 52px;
+    font-weight: 700;
+    color: v.$color-black;
+    display: inline-block;
+    background-color: transparent;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 32px;
+      padding-top: 10px;
+    }
+  }
+
+  &__desc {
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: v.$color-black;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 21px 16px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      grid-template-columns: 1fr;
+      gap: 17px;
+    }
+  }
+
+  &__item {
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 43px;
+    background-color: v.$color-white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-image: url('/images/arrow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      background-color: #f0e8dc;
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding: 27px;
+    }
+  }
+
+  &__link-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: v.$color-black;
+
+  }
+
+  &__link-arrow {
+    display: none;
+  }
+}
+
+// =====================================================
+// detail.html — 募集要項ヘッダー・職種ナビ
+// =====================================================
+.p-details {
+  padding-block: 136px 6px;
+  background-color: v.$color-white;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    padding-block: 52px 48px;
+  }
+
+  &__inner {
+    max-width: 1024px;
+    margin-inline: auto;
+    padding-inline: 22px;
+  }
+
+  &__heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: v.$color-black;
+    margin-bottom: 95px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__lead {
+    font-size: 16px;
+    line-height: 1.8;
+    color: v.$color-black;
+    margin-bottom: 63px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__job-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 49px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    
+  }
+
+  &__job-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid v.$color-black;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: v.$color-black;
+    text-decoration: none;
+    background-color: v.$color-beige;
+    transition: background-color v.$transition, color v.$transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 23px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-image: url('/images/arrow-bottom.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+
+
+    &:hover {
+      background-color: v.$color-black;
+      color: v.$color-white;
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 16px;
+      padding: 14px 20px;
+    }
+  }
+}
+
+.p-details__job-item--first .p-details__job-link::after {
+  right: 43px;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    right: 23px;
+    
+  }
+}
+
+// =====================================================
+// detail.html — 募集要項テーブル（職種ごと）
+// =====================================================
+.p-requirements {
+  padding-block: 0 138px;
+  background-color: v.$color-white;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    padding-block: 0 72px;
+  }
+
+  &__inner {
+    max-width: 1024px;
+    margin-inline: auto;
+    padding-inline: 22px;
+  }
+
+  &__block {
+    padding-top: 78px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding-top: 52px;
+    }
+  }
+
+  &__heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: v.$color-black;
+    margin-bottom: 103px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 91px;
+    padding-top: 36px;
+    padding-bottom: 35px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
+
+    &:first-of-type {
+      padding-top: 0;
+      padding-bottom: 42px;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        padding-bottom: 16px;
+      }
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      flex-direction: column;
+      gap: 8px;
+      padding-block: 16px;
+    }
+  }
+
+  &__term {
+    flex-shrink: 0;
+    width: 140px;
+    font-size: 16px;
+    font-weight: 700;
+    color: v.$color-black;
+    line-height: 1;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      width: auto;
+      font-size: 14px;
+    }
+  }
+
+  &__desc {
+    flex: 1;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+    color: v.$color-black;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 14px;
+    }
+  }
+}

@@ -13,11 +13,22 @@
 @use 'object/component/card';
 @use 'object/component/title';
 
-// Object - Project
-@use 'object/project/top';
+// Object - Project (TOP page sections)
+@use 'object/project/hero';
+@use 'object/project/about';
+@use 'object/project/member';
+@use 'object/project/system';
+@use 'object/project/top-blog';
+@use 'object/project/recruit';
+
+// Object - Project (other pages)
 @use 'object/project/staff';
 @use 'object/project/blog';
+@use 'object/project/benefits';
+@use 'object/project/career';
 @use 'object/project/contact';
+@use 'object/project/faq';
+@use 'object/project/entry';
 
 // Object - Utility
 @use 'object/utility/utility';

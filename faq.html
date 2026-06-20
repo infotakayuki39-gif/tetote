@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - tetote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;700&family=Viga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/scss/style.scss">
+</head>
+<body>
+
+    <header class="l-header l-header--page">
+        <div class="l-header__inner">
+
+          <a href="/" class="l-header__logo">
+            <img class="l-header__logo-white" src="/images/logo-white.svg" alt="TETOTE.co.ltd RECRUITING">
+            <img class="l-header__logo-black" src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+          </a>
+
+          <div class="l-header__cta">
+            <a href="/detail.html" class="l-header__btn l-header__btn--black">募集要項</a>
+            <a href="/entry.html" class="l-header__btn l-header__btn--gold">ENTRY</a>
+          </div>
+
+          <button
+            class="l-header__hamburger"
+            id="js-hamburger"
+            aria-expanded="false"
+            aria-controls="js-global-menu"
+            aria-label="メニューを開く"
+            type="button"
+          >
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-line"></span>
+            <span class="l-header__hamburger-text">MENU</span>
+          </button>
+
+        </div>
+    </header>
+
+    <div class="l-hamburger-menu" id="js-global-menu" aria-hidden="true">
+      <div class="l-hamburger-menu__inner">
+
+        <div class="l-hamburger-menu__logo-area">
+          <a href="/" class="l-hamburger-menu__logo">
+            <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+          </a>
+        </div>
+
+        <nav class="l-hamburger-menu__nav">
+          <ul class="l-hamburger-menu__list">
+            <li class="l-hamburger-menu__item">
+              <a href="/about.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">ABOUT US</span>
+                <span class="l-hamburger-menu__link-ja">TETOTEについて</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/staff.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">STAFF</span>
+                <span class="l-hamburger-menu__link-ja">社員について</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/blog.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">BLOG</span>
+                <span class="l-hamburger-menu__link-ja">採用ブログ</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/benefits.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">BENEFITS</span>
+                <span class="l-hamburger-menu__link-ja">福利厚生について</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/career.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">CAREER</span>
+                <span class="l-hamburger-menu__link-ja">研修制度とキャリアパス</span>
+              </a>
+            </li>
+            <li class="l-hamburger-menu__item">
+              <a href="/faq.html" class="l-hamburger-menu__link">
+                <span class="l-hamburger-menu__link-en">FAQ</span>
+                <span class="l-hamburger-menu__link-ja">よくある質問</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="l-hamburger-menu__cta">
+            <a href="/detail.html" class="l-hamburger-menu__btn l-hamburger-menu__btn--black">募集要項</a>
+            <a href="/entry.html" class="l-hamburger-menu__btn l-hamburger-menu__btn--gold">ENTRY</a>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <main class="l-page-main">
+
+        <!-- ページFV -->
+        <section class="c-page-fv c-page-fv--faq">
+          <div class="c-page-fv__content">
+            <h1 class="c-page-fv__title-en">FAQ</h1>
+            <p class="c-page-fv__title-ja">よくある質問</p>
+            <p class="c-page-fv__desc">皆様からよく頂くご質問にお答えします。</p>
+          </div>
+        </section>
+
+        <!-- パンくず -->
+        <nav class="c-breadcrumb" aria-label="パンくずリスト">
+          <div class="c-breadcrumb__inner">
+            <ol class="c-breadcrumb__list">
+              <li class="c-breadcrumb__item">
+                <a href="/" class="c-breadcrumb__link">TOP</a>
+              </li>
+              <li class="c-breadcrumb__item">FAQ</li>
+            </ol>
+          </div>
+        </nav>
+
+        <!-- FAQ コンテンツ -->
+        <section class="p-faq">
+          <div class="p-faq__inner">
+
+            <!-- カテゴリナビ -->
+            <nav aria-label="FAQカテゴリ">
+              <ul class="p-faq__nav-list">
+                <li><a href="#apply" class="p-faq__nav-link">応募・選考について</a></li>
+                <li><a href="#career" class="p-faq__nav-link">キャリアについて</a></li>
+                <li><a href="#benefits" class="p-faq__nav-link">福利厚生について</a></li>
+              </ul>
+            </nav>
+
+            <!-- 応募・選考について -->
+            <div class="p-faq__group" id="apply">
+              <h2 class="p-faq__heading">応募・選考について</h2>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">応募資格はありますか？</span>
+                </summary>
+                <p class="p-faq__answer">特定の資格や経験は問いません。業界未経験の方や第二新卒の方も大歓迎です。意欲とコミュニケーション能力を重視しています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">応募方法は？</span>
+                </summary>
+                <p class="p-faq__answer">弊社採用サイトからエントリーしてください。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">選考フローは？</span>
+                </summary>
+                <p class="p-faq__answer">書類選考 → 一次面接（人事担当者） → 最終面接（マネージャー） → 内定の流れになります。状況によって面接回数が変わる場合があります。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">選考にかかる時間は？</span>
+                </summary>
+                <p class="p-faq__answer">応募から内定まで約2〜4週間を目安としています。お急ぎの場合はエントリー時にご相談ください。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">面接では何を聞かれますか？</span>
+                </summary>
+                <p class="p-faq__answer">志望動機やこれまでのご経験、今後のキャリアプランについてお聞きします。特別な準備は必要ありませんので、ありのままをお話しください。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">面接官はどんな人ですか？</span>
+                </summary>
+                <p class="p-faq__answer">一次面接は人事担当者、最終面接は現場のマネージャーが担当します。和やかな雰囲気で行いますので、リラックスしてお越しください。</p>
+              </details>
+            </div>
+
+            <!-- キャリアについて -->
+            <div class="p-faq__group" id="career">
+              <h2 class="p-faq__heading">キャリアについて</h2>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">自分の希望するキャリアパスに進むことはできますか？</span>
+                </summary>
+                <p class="p-faq__answer">定期的なキャリア面談を通じて、ご希望のキャリアパスを上司と一緒に考えます。専門性を高めるルートとマネジメントを目指すルートの両方をご用意しています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">転勤はありますか？</span>
+                </summary>
+                <p class="p-faq__answer">業務の必要に応じて、転勤が発生する場合があります。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">転勤の希望は出せますか？</span>
+                </summary>
+                <p class="p-faq__answer">転勤の希望は面談時にお伝えいただけます。家庭の事情や個人の状況をできる限り考慮した上で判断しています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">ワークライフバランスは？</span>
+                </summary>
+                <p class="p-faq__answer">残業を最小限に抑えることを推進しており、フレックスタイム制度を活用しています。有給休暇の取得も積極的に奨励しています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">具体的にはどのような制度がありますか？</span>
+                </summary>
+                <p class="p-faq__answer">フレックスタイム制、在宅勤務制度、育児・介護休暇、慶弔休暇、リフレッシュ休暇などを整備しています。詳しくは福利厚生ページをご覧ください。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">育児休暇制度はありますか？</span>
+                </summary>
+                <p class="p-faq__answer">育児休業制度を整備しており、男性社員の取得実績もあります。復職後も柔軟な働き方ができるようサポートしています。</p>
+              </details>
+            </div>
+
+            <!-- 福利厚生について -->
+            <div class="p-faq__group" id="benefits">
+              <h2 class="p-faq__heading">福利厚生について</h2>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">どのような福利厚生制度がありますか？</span>
+                </summary>
+                <p class="p-faq__answer">健康保険・厚生年金・雇用保険・労災保険の各種社会保険のほか、交通費支給、財形貯蓄、資格取得支援、部活動補助など充実した制度を設けています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">財形貯蓄制度の内容は？</span>
+                </summary>
+                <p class="p-faq__answer">財形貯蓄を支援する制度です。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">社内イベントの内容は？</span>
+                </summary>
+                <p class="p-faq__answer">季節ごとの懇親会や忘年会・新年会、社員旅行などを実施しています。部署の垣根を越えた交流の機会を大切にしています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">部活動について教えてください。</span>
+                </summary>
+                <p class="p-faq__answer">サッカー、テニス、バドミントン、読書など様々な部活動があり、会社から活動補助金が支給されます。新しい部活動の立ち上げも歓迎しています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">資格取得支援制度はいくら補助が出ますか？</span>
+                </summary>
+                <p class="p-faq__answer">取得した資格の種類や難易度に応じて、最大5万円の補助金が支給されます。業務に関連する資格を中心に、幅広く対応しています。</p>
+              </details>
+
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__q-mark">Q</span>
+                  <span class="p-faq__q-text">年次有給休暇について教えてください</span>
+                </summary>
+                <p class="p-faq__answer">入社初年度から10日間付与され、勤続年数に応じて最大20日間まで増加します。計画的な取得を推奨しており、取得率の向上に取り組んでいます。</p>
+              </details>
+            </div>
+
+          </div>
+        </section>
+
+    </main>
+
+    <footer class="l-footer">
+
+        <div class="l-footer__cta">
+          <div class="l-footer__cta-inner">
+            <p class="l-footer__cta-text">
+              わたしたちと一緒に働く仲間を募集中です。<br>
+              少数精鋭のチームで、<br>
+              あなたも会社も一緒に成長していきましょう。
+            </p>
+            <a href="/entry.html" class="l-footer__cta-btn">
+              ENTRY
+              <span class="l-footer__cta-btn-arrow">›</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="l-footer__card">
+          <div class="l-footer__card-inner">
+
+            <div class="l-footer__body">
+              <div class="l-footer__body-inner">
+
+                <div class="l-footer__logo-wrap l-footer__logo-wrap--pc">
+                  <a href="/" class="l-footer__logo">
+                    <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+                  </a>
+                </div>
+
+                <nav class="l-footer__nav">
+                  <ul class="l-footer__nav-list">
+                    <li class="l-footer__nav-item">
+                      <a href="/" class="l-footer__nav-link">ホーム</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/about.html" class="l-footer__nav-link">TETOTEについて</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/staff.html" class="l-footer__nav-link">人を知る</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/career.html" class="l-footer__nav-link">研修制度とキャリアパス</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/benefits.html" class="l-footer__nav-link">福利厚生</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/blog.html" class="l-footer__nav-link">採用ブログ</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/detail.html" class="l-footer__nav-link">募集要項</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/faq.html" class="l-footer__nav-link">よくある質問</a>
+                    </li>
+                    <li class="l-footer__nav-item">
+                      <a href="/company.html" class="l-footer__nav-link">会社概要</a>
+                    </li>
+                  </ul>
+                </nav>
+
+              </div>
+            </div>
+
+            <div class="l-footer__bottom">
+              <div class="l-footer__bottom-inner">
+
+                <ul class="l-footer__sns">
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="Facebook">
+                      <img src="/images/FACEBOOK.svg" alt="Facebook" width="20" height="20">
+                    </a>
+                  </li>
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="Twitter">
+                      <img src="/images/twitter.svg" alt="Twitter" width="20" height="20">
+                    </a>
+                  </li>
+                  <li class="l-footer__sns-item">
+                    <a href="#" class="l-footer__sns-link" aria-label="YouTube">
+                      <img src="/images/YouTube.svg" alt="YouTube" width="20" height="20">
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="l-footer__logo-wrap l-footer__logo-wrap--sp">
+                  <a href="/" class="l-footer__logo">
+                    <img src="/images/logo-black.svg" alt="TETOTE.co.ltd RECRUITING">
+                  </a>
+                </div>
+
+                <small class="l-footer__copyright">
+                  &copy;2024 TETOTE All Right Reserved.
+                </small>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    </footer>
+
+    <script type="module" src="/js/script.js"></script>
+</body>
+</html>

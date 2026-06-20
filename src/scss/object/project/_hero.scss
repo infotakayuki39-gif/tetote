@@ -1,0 +1,249 @@
+@use '../../foundation/variable' as v;
+
+.p-hero {
+  position: relative;
+  margin-bottom: 101px;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+
+  @media screen and (max-width: v.$bp-tb-max) {
+    margin-bottom: 41px;
+  }
+
+  // スライダー
+  &__slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  &__slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+
+    &.is-active {
+      opacity: 1;
+    }
+
+    &--1 {
+      background-image: url('/images/fv01.jpg');
+      background-position: center center;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        background-position: 70% center;
+      }
+    }
+
+    &--2 {
+      background-image: url('/images/fv02.jpg');
+      background-position: center center;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        background-position: center center;
+      }
+    }
+  }
+
+  
+
+  // テキストコンテンツ
+  &__content {
+    position: absolute;
+    bottom: 161px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      bottom: 81px;
+      gap: 18px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    background: none;
+    color: v.$color-white;
+    font-family: v.$font-vigo;
+    font-size: clamp(48px, 6.5vw, 96px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    padding: 0px 63px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 48px;
+      padding: 0px 14px;
+      letter-spacing: normal;
+    }
+  }
+
+  &__subtitle {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    color: v.$color-white;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 66px;
+    margin-left: 0;
+    max-width: 515px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: v.$color-black;
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        94% 100%,
+        0% 100%
+      );
+      z-index: -1;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        clip-path: polygon(
+          0% 0%,
+          73% 0%,
+          69% 100%,
+          0% 100%
+        );
+      }
+    }
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 12px;
+      padding: 8px 24px 8px 12px;
+      max-width: 100%;
+    }
+  }
+
+  &__news {
+    position: absolute;
+    bottom: 37px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0; // paddingを削除して全幅に
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      bottom: 10px;
+    }
+  }
+  
+  &__news-inner {
+    display: flex;
+    align-items: stretch;
+    min-height: 62px;
+    width: calc(100% - 177px); // 左72px + 右105px分を引く
+    max-width: 1263px;
+    margin: 0 105px 0 72px;
+    border: 1px solid v.$color-black;
+    border-radius: 999px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      width: auto;
+      max-width: none;
+      min-height: 48px;
+      margin: 0 12px;
+    }
+  }
+
+  &__news-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: v.$color-black;
+    color: v.$color-white;
+    font-family: v.$font-en;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 0 57px;
+    flex-shrink: 0;
+    border-radius: 999px 0 0 999px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding: 0 11px;
+      font-size: 10px;
+    }
+  }
+
+  &__news-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: v.$color-white;
+    padding: 0 46px 0 90px;
+    border-radius: 0 999px 999px 0; // 右端だけ丸く
+    transition: opacity 0.3s ease;
+    min-width: 0;
+  
+    &:hover {
+      opacity: 0.8;
+    }
+  
+    @media screen and (max-width: v.$bp-tb-max) {
+      padding: 0 10px;
+      border-radius: 0 999px 999px 0;
+    }
+  }
+
+  &__news-text {
+    font-size: 16px;
+    color: v.$color-black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      font-size: 12px;
+      text-overflow: clip;
+    }
+
+    &--sp {
+      display: none;
+
+      @media screen and (max-width: v.$bp-tb-max) {
+        display: block;
+        white-space: normal;
+        line-height: 1.2;
+      }
+    }
+
+    &--pc {
+      @media screen and (max-width: v.$bp-tb-max) {
+        display: none;
+      }
+    }
+  }
+
+  &__news-more {
+    display: inline-flex;
+    align-items: center;
+    font-family: v.$font-vigo;
+    font-size: 14px;
+    color: v.$color-black;
+    white-space: nowrap;
+    flex-shrink: 0;
+    gap: 6px;
+
+    @media screen and (max-width: v.$bp-tb-max) {
+      display: none;
+    }
+
+    img {
+      display: block;
+    }
+  }
+}
