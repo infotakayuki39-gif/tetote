@@ -43,6 +43,10 @@
     @media screen and (max-width: v.$bp-tb-max) {
       padding: 0 5px 0 12px;
     }
+
+    body.is-drawerActive & {
+      gap: 47px;
+    }
   }
 
   &__logo {
@@ -92,7 +96,7 @@
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1;
     transition: opacity 0.3s ease;
 
@@ -111,6 +115,7 @@
     &--gold {
       background-color: v.$color-gold-light;
       color: v.$color-white;
+      font-weight: 400;
       padding: 14px 41px;
     }
   }
@@ -169,6 +174,9 @@
 
   // ハンバーガー　is-active時
   &__hamburger.is-active {
+    padding-top: 10px;
+    padding-inline: 0;
+
     .l-header__hamburger-line {
       background-color: v.$color-black;
     }
@@ -335,6 +343,7 @@
 
     &__link-ja {
       font-size: 16px;
+      font-weight: 700;
       color: v.$color-black;
       line-height: 1;
 
@@ -378,6 +387,7 @@
       &--gold {
         background-color: v.$color-gold-light;
         color: v.$color-white;
+        font-weight: 400;
       }
     }
   }

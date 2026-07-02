@@ -97,7 +97,12 @@
   }
 
   &__slider {
-    overflow: visible !important;
+    // Swiper 基底の .swiper { overflow: hidden } を上書き。
+    // Swiper CSS は JS で実行時に注入され後勝ちになるため、.swiper を連結して
+    // 特異度を上げ、!important を使わずに勝たせる。
+    &.swiper {
+      overflow: visible;
+    }
   }
 
   &__slide {
@@ -110,11 +115,14 @@
       }
     }
 
-    // slidesPerView: 'auto' 時、Swiper CSS の width:100% を上書き
-    width: 300px !important;
+    // slidesPerView: 'auto' 時、Swiper 基底の .swiper-slide { width: 100% } を上書き。
+    // .swiper-slide を連結して特異度を上げ、!important を回避する。
+    &.swiper-slide {
+      width: 300px;
 
-    @media screen and (max-width: v.$bp-tb-max) {
-      width: 246px !important;
+      @media screen and (max-width: v.$bp-tb-max) {
+        width: 246px;
+      }
     }
   }
 
@@ -158,7 +166,7 @@
   &__card-catch-line {
     display: inline-block;
     align-self: flex-start;
-    background-color: v.$color-gold;
+    background-color: v.$color-gold-light;
     color: v.$color-black;
     font-size: 20px;
     font-weight: bold;
@@ -254,10 +262,6 @@
     &:hover {
       width: 70px;
       height: 70px;
-      background-color: v.$color-black;
-
-      img:first-child { display: none; }
-      img + img { display: block; }
     }
 
 

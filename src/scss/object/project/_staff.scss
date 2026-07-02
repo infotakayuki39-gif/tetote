@@ -4,7 +4,7 @@
 // staff.html — スタッフ一覧
 // =====================================================
 .p-staff {
-  padding-block: 130px 137px;
+  padding-block: 130px 128px;
 
   @media screen and (max-width: v.$bp-tb-max) {
     padding-block: 52px 80px;
@@ -36,7 +36,7 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px 43px;
+    gap: 39px 43px;
 
     @media screen and (max-width: v.$bp-tb-max) {
       grid-template-columns: repeat(2, 1fr);
@@ -109,7 +109,7 @@
     font-weight: 700;
     line-height: 1;
     color: v.$color-black;
-    margin-bottom: 16px;
+    margin-bottom: 9px;
 
     @media screen and (max-width: v.$bp-tb-max) {
       font-size: 12px;
@@ -267,6 +267,7 @@
       width: 100%;
       max-width: 100%;
       aspect-ratio: 4 / 3;
+      margin-top: 32px;
     }
   }
 

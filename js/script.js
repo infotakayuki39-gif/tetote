@@ -134,7 +134,7 @@ function initSwiper() {
   const aboutSlider = document.querySelector('.p-about__slider');
   if (aboutSlider) {
     new Swiper('.p-about__slider', {
-      modules: [],
+      modules: [Autoplay],
       slidesPerView: 2.5,
       spaceBetween: 20,
       loop: true,

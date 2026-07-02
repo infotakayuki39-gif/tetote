@@ -138,16 +138,15 @@
     }
 
     .p-blog__more:hover & {
-      background-color: v.$color-black;
+      width: 70px;
+      height: 70px;
 
-      img {
-        filter: brightness(0) invert(1);
-      }
+    
     }
   }
 
   &__more-text {
-    font-family: v.$font-vigo, sans-serif;
+    font-family: v.$font-vigo;
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
@@ -177,12 +176,12 @@
     gap: 0;
     align-items: stretch;
     flex-direction: row;
-    height: 180px;
+    min-height: 180px;
     text-decoration: none;
     transition: opacity 0.3s ease;
 
     @media screen and (max-width: v.$bp-tb-max) {
-      height: 121px;
+      min-height: 121px;
     }
 
     &:hover {
@@ -205,6 +204,7 @@
 
     @media screen and (max-width: v.$bp-tb-max) {
       width: 121px;
+      height: 121px;
     }
   }
 
@@ -221,6 +221,7 @@
   }
 
   &__tag {
+    max-width: 100%;
     font-size: 14px;
     color: v.$color-black;
     display: inline-flex;
@@ -228,6 +229,8 @@
     gap: 5px;
     align-self: flex-start;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-bottom: 17px;
 
     @media screen and (max-width: v.$bp-tb-max) {
@@ -246,8 +249,9 @@
     text-underline-offset: 3px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     overflow: hidden;
-
 
     @media screen and (max-width: v.$bp-tb-max) {
       font-size: 14px;

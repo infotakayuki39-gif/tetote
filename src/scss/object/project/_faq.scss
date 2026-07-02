@@ -61,8 +61,8 @@
     }
 
     &:hover {
-      background-color: v.$color-black;
-      color: v.$color-white;
+      opacity: 0.8;
+
     }
 
     @media screen and (max-width: v.$bp-tb-max) {
@@ -149,7 +149,7 @@
 
   &__q-mark {
     flex-shrink: 0;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     color: v.$color-gold;
     font-family: v.$font-vigo;
